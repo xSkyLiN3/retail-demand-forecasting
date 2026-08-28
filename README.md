@@ -1,129 +1,150 @@
 # Retail Demand Forecasting & Monitoring
 
-An evidence-first machine-learning project for forecasting daily product demand from real retail
-transactions. The system is being built around chronological backtesting, strong seasonal
-baselines and post-forecast monitoring rather than a single favorable metric.
+An end-to-end ML engineering case study built from real retail transactions: reproducible data
+preparation, chronological backtesting, model-governance gates, calibrated forecast intervals,
+batch inference, outcome reconciliation, PostgreSQL/JSON persistence, a read-only API and an
+interactive monitoring dashboard.
 
-> **Status:** local M1 verified. A frozen learned candidate improved aggregate error but was
-> rejected for bias and insufficient SKU breadth. Seasonal naive remains champion; the final
-> holdout is still reserved and no public demo is claimed yet.
+> **Final status:** the software and evidence pipeline are complete, but the model is **not approved
+> for operational purchasing decisions**. The frozen final holdout exposed 77.02% interval coverage
+> against a 90% nominal target and an 85% minimum guardrail. That failure is published, not tuned
+> away. The project is a historical educational demonstration of responsible ML evaluation.
 
-## Problem
+## What this project demonstrates
 
-For a fixed cohort of retail products, forecast the next 14 days of positive observed invoiced
-unit sales. These sales are used as a demand proxy; the dataset contains no stock availability,
-lost-sales or fulfilment evidence. The
-cohort is selected only from an initial training window, and every evaluation fold predicts dates
-strictly after its training cutoff.
+- source and workbook integrity pinned with SHA-256;
+- a training-only SKU cohort and documented daily-demand contract;
+- 20 non-overlapping rolling-origin development folds plus one separately claimed 84-day holdout;
+- comparison of a strong weekly baseline with a global learned challenger;
+- promotion rules that consider error, bias, fold consistency and SKU breadth;
+- signed, horizon-specific prediction intervals calibrated without holdout outcomes;
+- prequential monitoring with coverage, width, Winkler score, WAPE and normalized bias;
+- deterministic, idempotent batch forecasts and strict outcome reconciliation;
+- interchangeable atomic JSON and PostgreSQL repositories;
+- FastAPI endpoints and a dependency-free responsive dashboard;
+- Python 3.12 packaging, tests, lint, CI, Dockerfile and localhost-only Compose exposure.
 
-This is an educational forecasting system. The source is a historical UK online-retail dataset,
-not a live store feed, and the output is not validated for inventory or purchasing decisions.
+## Final evidence
 
-## Why this project exists
+The learned `poisson_conservative` challenger reduced confirmation WAPE by 11.94%, from `1.2365`
+to `1.0889`, but was rejected because its absolute bias reached 14.77% and it improved only 10 of
+20 products. The deterministic `seasonal_naive_7d` baseline therefore remained champion.
 
-The existing Machine Failure Risk Classifier demonstrates tabular classification, reproducible
-training, a strict API and deployment. This project is intentionally different:
+M2 then froze interval calibration and monitoring policy before opening the final window exactly
+once.
 
-- real transactional data rather than a synthetic table;
-- temporal validation rather than a random or stratified split;
-- multi-horizon regression rather than classification;
-- seasonal baselines, forecast bias and interval coverage;
-- batch prediction and monitoring replay;
-- SQL-backed forecast and outcome history in a later milestone.
+| Final holdout metric | Observed | Predeclared reading |
+|---|---:|---|
+| Rows | 1,680 | 20 SKU × 14 horizons × 6 origins |
+| WAPE | 1.1565 | below the provisional 2.00 alert threshold, but still weak |
+| MAE | 85.1881 | units per SKU-day forecast row |
+| Normalized bias | +0.0593 | passes the ±0.10 guardrail |
+| Empirical coverage | **77.02%** | **fails** the 85% minimum and 90% nominal target |
+| Mean interval width | 192.3692 | must be read together with coverage |
+| Winkler score | 1,105.4818 | penalizes misses and width |
 
-## Data
+The outcome is `degraded_with_published_alerts`: 52 alerts were emitted across the overall,
+horizon and SKU scopes. This is a useful no-go result, not evidence of a production-ready demand
+model. See the [M2 report](reports/m2/M2_REPORT.md), [model card](MODEL_CARD.md) and
+[compact evidence summary](reports/m2/evidence/evaluation_summary.json).
 
-The project uses [UCI Online Retail II](https://doi.org/10.24432/C5CG6D), a workbook containing
-1,067,371 physical rows from a UK non-store retailer between December 2009 and December 2011.
-UCI publishes it under CC BY 4.0. Its two sheets overlap from 1–9 December 2010; a documented
-multiset union removes 22,523 repeated cross-sheet copies and retains 1,044,848 logical rows. The
-raw workbook is downloaded separately and is never committed to this repository.
+![Final holdout coverage by forecast horizon](reports/m2/figures/holdout_coverage_by_horizon.svg)
 
-The target is **gross positive invoiced units per SKU and calendar day**. Cancellation invoices,
-returns, non-positive prices and non-product stock codes do not enter the target. They remain
-accounted for in data-quality reporting so that cleaning decisions are visible. A source-wide
-activity flag distinguishes days with no eligible SKU sale from dates with no transaction anywhere
-in the supplied ledger.
-
-See [the data contract](docs/DATA_CONTRACT.md) and
-[the evaluation protocol](docs/EVALUATION_PROTOCOL.md) before interpreting metrics. The observed
-M0 evidence is summarized in [the data audit](docs/DATA_AUDIT.md) and
-[the baseline report](reports/m0/M0_REPORT.md).
-
-## Observed M1 result
-
-A global direct `HistGradientBoostingRegressor` was selected on 14 tuning folds and confirmed once
-on six later folds. It reduced confirmation WAPE from `1.2365` to `1.0889` and MASE from `0.6843`
-to `0.6043`, but overpredicted by `14.77 %` and improved only 10 of 20 SKU. The predeclared gate
-therefore rejected it; a lower aggregate error alone was not enough to replace the baseline.
-
-See the complete [M1 decision report](reports/m1/M1_REPORT.md) and its compact, hashed evidence.
-The final 84-day holdout remains untouched.
-
-## Planned architecture
+## Architecture
 
 ```mermaid
 flowchart LR
-    A[UCI source archive] --> B[Hash and workbook validation]
-    B --> C[Transaction quality report]
-    C --> D[Training-only SKU cohort]
-    D --> E[Complete daily panel]
-    E --> F[Rolling-origin folds]
-    F --> G[Seasonal-naive baseline]
-    F --> H[Global learned model]
-    G --> I[WAPE / MASE / bias]
-    H --> I
-    I --> J[Forecast and interval store]
-    J --> K[Monitoring replay and dashboard]
+    A[UCI archive] --> B[Hash + workbook audit]
+    B --> C[Training-only cohort]
+    C --> D[Complete daily panel]
+    D --> E[Rolling-origin backtests]
+    E --> F[Champion gate]
+    F --> G[M2 interval freeze]
+    G --> H[One-time holdout]
+    H --> I[Batch forecasts]
+    I --> J[(JSON / PostgreSQL)]
+    J --> K[Reconciliation + monitoring]
+    K --> L[FastAPI + dashboard]
 ```
 
-## Local setup
+The detailed design is in [Architecture](docs/ARCHITECTURE.md). The target definition and temporal
+rules live in the [data contract](docs/DATA_CONTRACT.md) and
+[evaluation protocol](docs/EVALUATION_PROTOCOL.md).
+
+## Run the reviewed demo
 
 Python 3.12 is required.
 
 ```powershell
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -c requirements\constraints-py312.txt -e ".[dev]"
-.\.venv\Scripts\retail-forecast.exe --help
+.\.venv\Scripts\python.exe -m pip install --upgrade "pip==26.2.1"
+.\.venv\Scripts\python.exe -m pip install `
+  --constraint requirements\constraints-py312.txt `
+  --editable ".[api,postgres,dev]"
+.\.venv\Scripts\retail-forecast-api.exe
 ```
 
-The verified M0 commands are:
+Open `http://127.0.0.1:8000`. The bundled snapshot is a read-only historical replay. API
+documentation is available at `http://127.0.0.1:8000/docs`.
+
+For PostgreSQL-backed local execution:
+
+```powershell
+$env:POSTGRES_PASSWORD = "replace-with-a-local-secret"
+docker compose up --build
+```
+
+Compose publishes only the API on `127.0.0.1`; PostgreSQL has no host port. Use a real secret and a
+TLS reverse proxy before any VPS deployment. Full operating instructions are in
+[Operations](docs/OPERATIONS.md).
+
+## Reproduce the evidence
 
 ```powershell
 retail-forecast download
 retail-forecast prepare
 retail-forecast baseline
-```
-
-The M1 workflow deliberately separates selection from confirmation:
-
-```powershell
 retail-forecast tune-model
-retail-forecast validate-model --selection <generated-selection.json>
+retail-forecast validate-model --selection <frozen-selection.json>
+retail-forecast freeze-m2
+retail-forecast evaluate-holdout --contract <frozen-m2-contract.json>
 ```
 
-`validate-model` creates a panel-keyed claim and receipt so changing `--report-dir` cannot silently
-repeat the confirmation. A failed or interrupted claim must be inspected rather than deleted and
-rerun casually.
+The last command is intentionally separate and panel-keyed by an exclusive claim/receipt. It must
+not be scheduled in CI or repeated after outcomes have been observed. Batch inference also verifies
+the panel, cohort, M1 evidence, M2 contract and source-tree hashes before opening storage.
 
-Raw and generated data remain under ignored `data/` and `reports/generated/` directories.
+Raw UCI files, processed panels, local claims/receipts and generated scratch runs are ignored. The
+reviewed reports and their output hashes remain versioned.
 
-## Quality gate before publication
+## Quality
 
-The project will not be presented as complete until it has:
+The reviewed release passed:
 
-1. a checksum-pinned source and reproducible daily panel;
-2. at least six rolling-origin folds with no future leakage;
-3. a seasonal-naive baseline reported before model selection, a frozen development confirmation,
-   and a single baseline-versus-challenger comparison when the final window is opened;
-4. consistent improvement across folds and products, not only in aggregate;
-5. interval coverage and failure cases shown in the demo;
-6. automated tests, a model card and a local functional demo.
+- 103 tests on Python 3.12;
+- Ruff lint and format checks over 50 files;
+- wheel and source-distribution builds in a clean temporary workspace;
+- FastAPI health/dashboard smoke tests;
+- integrity tests for tampered contracts, panels, receipts and output manifests.
 
-Deployment, PostgreSQL and portfolio integration come only after that gate.
+CI runs on Windows and Linux. Docker packaging is included; the final audit host did not have a
+Docker daemon, so image construction must still be confirmed on a Docker-enabled machine before
+deployment.
+
+## Data and limitations
+
+The source is [UCI Online Retail II](https://doi.org/10.24432/C5CG6D), licensed CC BY 4.0. It
+contains historical invoices from a UK non-store retailer. The target is gross positive invoiced
+units—not unconstrained demand. There is no reliable inventory, stockout, fulfilment, promotion or
+lost-sales context.
+
+High WAPE, undercoverage and unstable SKU slices show that the current champion is unsuitable for
+business decisions. Any improved interval method or model must be evaluated as a new version on new
+untouched temporal evidence; the published holdout cannot be reused as a tuning set.
 
 ## Author
 
 Cristóbal Vergara — [GitHub](https://github.com/xSkyLiN3) ·
 [LinkedIn](https://www.linkedin.com/in/cristobal-vergarav/)
+
+Code license: [MIT](LICENSE).

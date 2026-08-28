@@ -1,0 +1,394 @@
+{
+  "alerts": [
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7702380952380953,
+      "scope": "overall",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 1.0,
+      "scope": "horizon:1",
+      "threshold": 0.98
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.7499283872815812,
+      "scope": "horizon:2",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8,
+      "scope": "horizon:3",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.23331234256926953,
+      "scope": "horizon:3",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.125,
+      "scope": "horizon:4",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.3990788716177317,
+      "scope": "horizon:4",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7,
+      "scope": "horizon:5",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.1582763793965661,
+      "scope": "horizon:5",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8416666666666667,
+      "scope": "horizon:6",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.3912411118293471,
+      "scope": "horizon:6",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 1.0,
+      "scope": "horizon:8",
+      "threshold": 0.98
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 0.9916666666666667,
+      "scope": "horizon:9",
+      "threshold": 0.98
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.35184775392786016,
+      "scope": "horizon:9",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.11666666666666667,
+      "scope": "horizon:11",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.37532541029994343,
+      "scope": "horizon:11",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7666666666666667,
+      "scope": "horizon:12",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.10549158547387068,
+      "scope": "horizon:12",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.825,
+      "scope": "horizon:13",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.11566512583461735,
+      "scope": "horizon:13",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8333333333333334,
+      "scope": "sku:17003",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.158618194971966,
+      "scope": "sku:17003",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7380952380952381,
+      "scope": "sku:20725",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7976190476190477,
+      "scope": "sku:21212",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7380952380952381,
+      "scope": "sku:21213",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.6481994459833795,
+      "scope": "sku:21213",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7261904761904762,
+      "scope": "sku:21232",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.15792426367461432,
+      "scope": "sku:21232",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8095238095238095,
+      "scope": "sku:21977",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.28930987821380244,
+      "scope": "sku:21977",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.15130190007037297,
+      "scope": "sku:21980",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8452380952380952,
+      "scope": "sku:21982",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.28950863213811423,
+      "scope": "sku:21982",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.4551282051282051,
+      "scope": "sku:21984",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.5833333333333334,
+      "scope": "sku:22197",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.75,
+      "scope": "sku:84077",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.3528397112374625,
+      "scope": "sku:84077",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 1.0,
+      "scope": "sku:84270",
+      "threshold": 0.98
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.6547619047619048,
+      "scope": "sku:84347",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8333333333333334,
+      "scope": "sku:84568",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.14984709480122324,
+      "scope": "sku:84568",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7857142857142857,
+      "scope": "sku:84755",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.23224568138195778,
+      "scope": "sku:84755",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.6309523809523809,
+      "scope": "sku:84879",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7261904761904762,
+      "scope": "sku:84991",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.375,
+      "scope": "sku:84991",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7857142857142857,
+      "scope": "sku:84992",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.188174190970835,
+      "scope": "sku:84992",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.6309523809523809,
+      "scope": "sku:85099B",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.19385947648100768,
+      "scope": "sku:85099B",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7857142857142857,
+      "scope": "sku:85123A",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.128708299665243,
+      "scope": "sku:85123A",
+      "threshold": 0.1
+    }
+  ],
+  "champion": "seasonal_naive_7d",
+  "folds": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "holdout_end": "2011-12-09",
+  "holdout_start": "2011-09-17",
+  "interval_status": "degraded_with_published_alerts",
+  "nominal_coverage": 0.9,
+  "overall": {
+    "actual_units": 123744.0,
+    "coverage": 0.7702380952380953,
+    "mae": 85.18809523809524,
+    "mean_width": 192.36921257438343,
+    "median_width": 164.70851533285773,
+    "normalized_bias": 0.059299844840961985,
+    "predicted_units": 131082.0,
+    "rows": 1680,
+    "wape": 1.1565490043961728,
+    "winkler": 1105.4818329024374
+  },
+  "rows": 1680
+}

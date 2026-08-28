@@ -11,7 +11,7 @@
 | Horizon | 14 calendar days |
 | Interval target | Nominal 90% coverage |
 | License for project code | MIT |
-| Status | Educational historical-data system; not approved for purchasing decisions |
+| Status | Final evaluation complete; operational use rejected |
 
 The champion repeats the most recent observed seven-day pattern for each SKU across the next 14
 days. It is deterministic, non-negative and recalculated from data available at the forecast cutoff.
@@ -73,10 +73,23 @@ mean and median width, and Winkler score, globally and by relevant slices. WAPE 
 are non-evaluable when observed aggregate units are zero; the implementation preserves null rather
 than substituting a favorable zero.
 
-Existing numerical results are reported in the versioned M0/M1 evidence and reports. This model card
-does not duplicate them because doing so risks separating claims from their hashes and evaluation
-context. Final-holdout results must not be claimed until a canonical receipt and reviewed evidence
-exist.
+The canonical final holdout was opened once after the M2 contract was frozen. It contains 1,680
+forecast rows from 20 SKU, 14 horizons and six sequential origins (`2011-09-17` to `2011-12-09`).
+
+| Metric | Final holdout |
+|---|---:|
+| WAPE | 1.1565 |
+| MAE | 85.1881 |
+| Normalized bias | +0.0593 |
+| Empirical interval coverage | 77.02% |
+| Mean interval width | 192.3692 |
+| Winkler score | 1,105.4818 |
+
+The run status is `degraded_with_published_alerts`. Coverage failed the frozen 85% minimum and 90%
+nominal target. WAPE remained below the provisional 2.0 alert threshold, but 115.65% absolute error
+relative to observed volume is still operationally weak. The model and its intervals are therefore
+not approved for purchasing or inventory decisions. The canonical IDs, hashes and slice results are
+published in the [M2 report](reports/m2/M2_REPORT.md) and evidence directory.
 
 ## Prediction intervals
 
@@ -132,7 +145,7 @@ The project records input, code, configuration and output hashes. M1 model selec
 M2 freezing and final evaluation are separate operations. Exclusive claims and receipts are intended
 to prevent silent repetition after outcomes may have been observed.
 
-A portfolio-grade canonical result should satisfy all of the following:
+A portfolio-grade canonical run satisfies all of the following governance requirements:
 
 - run from Python 3.12 with pinned constraints;
 - originate from a clean, identifiable Git commit;
@@ -140,6 +153,10 @@ A portfolio-grade canonical result should satisfy all of the following:
 - preserve panel, cohort, M1, M2 and output hashes;
 - publish unfavorable slices and alerts as well as favorable aggregate values;
 - retain the educational-use disclaimer in the API and dashboard.
+
+These controls make the result auditable; they do not turn a failed quality gate into model
+approval. Any future model or interval revision must use new untouched evidence rather than tune on
+the published final holdout.
 
 ## Operational ownership
 

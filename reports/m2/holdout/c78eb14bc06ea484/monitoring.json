@@ -1,0 +1,827 @@
+{
+  "alerts": [
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7702380952380953,
+      "scope": "overall",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 1.0,
+      "scope": "horizon:1",
+      "threshold": 0.98
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.7499283872815812,
+      "scope": "horizon:2",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8,
+      "scope": "horizon:3",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.23331234256926953,
+      "scope": "horizon:3",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.125,
+      "scope": "horizon:4",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.3990788716177317,
+      "scope": "horizon:4",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7,
+      "scope": "horizon:5",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.1582763793965661,
+      "scope": "horizon:5",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8416666666666667,
+      "scope": "horizon:6",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.3912411118293471,
+      "scope": "horizon:6",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 1.0,
+      "scope": "horizon:8",
+      "threshold": 0.98
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 0.9916666666666667,
+      "scope": "horizon:9",
+      "threshold": 0.98
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.35184775392786016,
+      "scope": "horizon:9",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.11666666666666667,
+      "scope": "horizon:11",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.37532541029994343,
+      "scope": "horizon:11",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7666666666666667,
+      "scope": "horizon:12",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.10549158547387068,
+      "scope": "horizon:12",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.825,
+      "scope": "horizon:13",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.11566512583461735,
+      "scope": "horizon:13",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8333333333333334,
+      "scope": "sku:17003",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.158618194971966,
+      "scope": "sku:17003",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7380952380952381,
+      "scope": "sku:20725",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7976190476190477,
+      "scope": "sku:21212",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7380952380952381,
+      "scope": "sku:21213",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.6481994459833795,
+      "scope": "sku:21213",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7261904761904762,
+      "scope": "sku:21232",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.15792426367461432,
+      "scope": "sku:21232",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8095238095238095,
+      "scope": "sku:21977",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.28930987821380244,
+      "scope": "sku:21977",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.15130190007037297,
+      "scope": "sku:21980",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8452380952380952,
+      "scope": "sku:21982",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.28950863213811423,
+      "scope": "sku:21982",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.4551282051282051,
+      "scope": "sku:21984",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.5833333333333334,
+      "scope": "sku:22197",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.75,
+      "scope": "sku:84077",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.3528397112374625,
+      "scope": "sku:84077",
+      "threshold": 0.1
+    },
+    {
+      "direction": "above",
+      "metric": "coverage",
+      "observed": 1.0,
+      "scope": "sku:84270",
+      "threshold": 0.98
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.6547619047619048,
+      "scope": "sku:84347",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.8333333333333334,
+      "scope": "sku:84568",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.14984709480122324,
+      "scope": "sku:84568",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7857142857142857,
+      "scope": "sku:84755",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.23224568138195778,
+      "scope": "sku:84755",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.6309523809523809,
+      "scope": "sku:84879",
+      "threshold": 0.85
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7261904761904762,
+      "scope": "sku:84991",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.375,
+      "scope": "sku:84991",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7857142857142857,
+      "scope": "sku:84992",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.188174190970835,
+      "scope": "sku:84992",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.6309523809523809,
+      "scope": "sku:85099B",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.19385947648100768,
+      "scope": "sku:85099B",
+      "threshold": 0.1
+    },
+    {
+      "direction": "below",
+      "metric": "coverage",
+      "observed": 0.7857142857142857,
+      "scope": "sku:85123A",
+      "threshold": 0.85
+    },
+    {
+      "direction": "above",
+      "metric": "absolute_normalized_bias",
+      "observed": 0.128708299665243,
+      "scope": "sku:85123A",
+      "threshold": 0.1
+    }
+  ],
+  "by_horizon": [
+    {
+      "actual_units": 0.0,
+      "coverage": 1.0,
+      "horizon": 1,
+      "mae": 0.0,
+      "mean_width": 252.04692393304296,
+      "median_width": 222.60265614865602,
+      "normalized_bias": null,
+      "predicted_units": 0.0,
+      "rows": 120,
+      "wape": null,
+      "winkler": 252.04692393304296
+    },
+    {
+      "actual_units": 3491.0,
+      "coverage": 0.975,
+      "horizon": 2,
+      "mae": 44.55,
+      "mean_width": 216.35829106329237,
+      "median_width": 169.32277431870264,
+      "normalized_bias": 0.7499283872815812,
+      "predicted_units": 6109.0,
+      "rows": 120,
+      "wape": 1.5313663706674305,
+      "winkler": 230.47086544733745
+    },
+    {
+      "actual_units": 12704.0,
+      "coverage": 0.8,
+      "horizon": 3,
+      "mae": 89.88333333333334,
+      "mean_width": 180.49613317259343,
+      "median_width": 139.75118298926174,
+      "normalized_bias": -0.23331234256926953,
+      "predicted_units": 9740.0,
+      "rows": 120,
+      "wape": 0.8490239294710328,
+      "winkler": 763.3216772092298
+    },
+    {
+      "actual_units": 8685.0,
+      "coverage": 0.125,
+      "horizon": 4,
+      "mae": 83.4,
+      "mean_width": 0.0,
+      "median_width": 0.0,
+      "normalized_bias": 0.3990788716177317,
+      "predicted_units": 12151.0,
+      "rows": 120,
+      "wape": 1.1523316062176165,
+      "winkler": 1668.0000000000005
+    },
+    {
+      "actual_units": 11998.0,
+      "coverage": 0.7,
+      "horizon": 5,
+      "mae": 92.00833333333334,
+      "mean_width": 131.63332381902327,
+      "median_width": 99.18295812203357,
+      "normalized_bias": -0.1582763793965661,
+      "predicted_units": 10099.0,
+      "rows": 120,
+      "wape": 0.9202367061176863,
+      "winkler": 1021.5776072049134
+    },
+    {
+      "actual_units": 12376.0,
+      "coverage": 0.8416666666666667,
+      "horizon": 6,
+      "mae": 147.9,
+      "mean_width": 278.84884558383226,
+      "median_width": 225.6252983408778,
+      "normalized_bias": 0.3912411118293471,
+      "predicted_units": 17218.0,
+      "rows": 120,
+      "wape": 1.434065934065934,
+      "winkler": 1934.0429242029106
+    },
+    {
+      "actual_units": 9907.0,
+      "coverage": 0.9166666666666666,
+      "horizon": 7,
+      "mae": 95.975,
+      "mean_width": 314.7484228586679,
+      "median_width": 264.61417358484016,
+      "normalized_bias": 0.03199757747047542,
+      "predicted_units": 10224.0,
+      "rows": 120,
+      "wape": 1.1625113556071465,
+      "winkler": 935.7990220410354
+    },
+    {
+      "actual_units": 0.0,
+      "coverage": 1.0,
+      "horizon": 8,
+      "mae": 0.0,
+      "mean_width": 167.5736287516941,
+      "median_width": 147.99758028590492,
+      "normalized_bias": null,
+      "predicted_units": 0.0,
+      "rows": 120,
+      "wape": null,
+      "winkler": 167.5736287516941
+    },
+    {
+      "actual_units": 4519.0,
+      "coverage": 0.9916666666666667,
+      "horizon": 9,
+      "mae": 48.03333333333333,
+      "mean_width": 384.9446139538299,
+      "median_width": 305.68755042472526,
+      "normalized_bias": 0.35184775392786016,
+      "predicted_units": 6109.0,
+      "rows": 120,
+      "wape": 1.275503429962381,
+      "winkler": 387.45839795985705
+    },
+    {
+      "actual_units": 10671.0,
+      "coverage": 0.85,
+      "horizon": 10,
+      "mae": 94.125,
+      "mean_width": 188.6627642421035,
+      "median_width": 144.96986679101846,
+      "normalized_bias": -0.08724580639115359,
+      "predicted_units": 9740.0,
+      "rows": 120,
+      "wape": 1.0584762440258646,
+      "winkler": 910.5077855216554
+    },
+    {
+      "actual_units": 8835.0,
+      "coverage": 0.11666666666666667,
+      "horizon": 11,
+      "mae": 92.95,
+      "mean_width": 0.0,
+      "median_width": 0.0,
+      "normalized_bias": 0.37532541029994343,
+      "predicted_units": 12151.0,
+      "rows": 120,
+      "wape": 1.2624787775891342,
+      "winkler": 1859.0000000000005
+    },
+    {
+      "actual_units": 11290.0,
+      "coverage": 0.7666666666666667,
+      "horizon": 12,
+      "mae": 95.65833333333333,
+      "mean_width": 124.58370602840766,
+      "median_width": 95.00308965298501,
+      "normalized_bias": -0.10549158547387068,
+      "predicted_units": 10099.0,
+      "rows": 120,
+      "wape": 1.01674047829938,
+      "winkler": 1282.4972226964799
+    },
+    {
+      "actual_units": 19470.0,
+      "coverage": 0.825,
+      "horizon": 13,
+      "mae": 207.13333333333333,
+      "mean_width": 222.61988818459255,
+      "median_width": 170.78918857135417,
+      "normalized_bias": -0.11566512583461735,
+      "predicted_units": 17218.0,
+      "rows": 120,
+      "wape": 1.2766307139188495,
+      "winkler": 2917.516212643951
+    },
+    {
+      "actual_units": 9798.0,
+      "coverage": 0.875,
+      "horizon": 14,
+      "mae": 101.01666666666667,
+      "mean_width": 230.65243445028833,
+      "median_width": 186.56176042687582,
+      "normalized_bias": 0.043478260869565216,
+      "predicted_units": 10224.0,
+      "rows": 120,
+      "wape": 1.2371912635231679,
+      "winkler": 1146.933393022016
+    }
+  ],
+  "by_sku": [
+    {
+      "actual_units": 5529.0,
+      "coverage": 0.8333333333333334,
+      "mae": 121.55952380952381,
+      "mean_width": 304.6747519561555,
+      "median_width": 314.25828879840526,
+      "normalized_bias": 0.158618194971966,
+      "predicted_units": 6406.0,
+      "rows": 84,
+      "sku": "17003",
+      "wape": 1.8468077410019894,
+      "winkler": 1817.8559299338574
+    },
+    {
+      "actual_units": 4567.0,
+      "coverage": 0.7380952380952381,
+      "mae": 38.55952380952381,
+      "mean_width": 122.40963230264498,
+      "median_width": 114.85452265359189,
+      "normalized_bias": 0.03262535581344427,
+      "predicted_units": 4716.0,
+      "rows": 84,
+      "sku": "20725",
+      "wape": 0.7092183052331946,
+      "winkler": 368.7578965553483
+    },
+    {
+      "actual_units": 6542.0,
+      "coverage": 0.7976190476190477,
+      "mae": 75.80952380952381,
+      "mean_width": 272.4795581556308,
+      "median_width": 274.8646731674037,
+      "normalized_bias": -0.0021400183430143687,
+      "predicted_units": 6528.0,
+      "rows": 84,
+      "sku": "21212",
+      "wape": 0.9734026291653929,
+      "winkler": 761.5993164485064
+    },
+    {
+      "actual_units": 2888.0,
+      "coverage": 0.7380952380952381,
+      "mae": 57.30952380952381,
+      "mean_width": 157.68777750072778,
+      "median_width": 137.8797442070761,
+      "normalized_bias": 0.6481994459833795,
+      "predicted_units": 4760.0,
+      "rows": 84,
+      "sku": "21213",
+      "wape": 1.6668975069252077,
+      "winkler": 613.197409659348
+    },
+    {
+      "actual_units": 3565.0,
+      "coverage": 0.7261904761904762,
+      "mae": 41.416666666666664,
+      "mean_width": 102.80598508505066,
+      "median_width": 108.31127439067757,
+      "normalized_bias": -0.15792426367461432,
+      "predicted_units": 3002.0,
+      "rows": 84,
+      "sku": "21232",
+      "wape": 0.9758765778401122,
+      "winkler": 521.2332121770934
+    },
+    {
+      "actual_units": 3695.0,
+      "coverage": 0.8095238095238095,
+      "mae": 63.654761904761905,
+      "mean_width": 192.9103166785272,
+      "median_width": 176.55248640573342,
+      "normalized_bias": 0.28930987821380244,
+      "predicted_units": 4764.0,
+      "rows": 84,
+      "sku": "21977",
+      "wape": 1.4470906630581868,
+      "winkler": 728.3314534145438
+    },
+    {
+      "actual_units": 1421.0,
+      "coverage": 0.8690476190476191,
+      "mae": 20.345238095238095,
+      "mean_width": 121.32560859631775,
+      "median_width": 126.29955371216889,
+      "normalized_bias": -0.15130190007037297,
+      "predicted_units": 1206.0,
+      "rows": 84,
+      "sku": "21980",
+      "wape": 1.2026741731175228,
+      "winkler": 238.48215734073588
+    },
+    {
+      "actual_units": 1506.0,
+      "coverage": 0.8452380952380952,
+      "mae": 20.761904761904763,
+      "mean_width": 138.80801364715722,
+      "median_width": 141.06303264010904,
+      "normalized_bias": -0.28950863213811423,
+      "predicted_units": 1070.0,
+      "rows": 84,
+      "sku": "21982",
+      "wape": 1.158034528552457,
+      "winkler": 257.83503015072796
+    },
+    {
+      "actual_units": 624.0,
+      "coverage": 0.8809523809523809,
+      "mae": 10.428571428571429,
+      "mean_width": 108.35955108590328,
+      "median_width": 109.38541712825567,
+      "normalized_bias": 0.4551282051282051,
+      "predicted_units": 908.0,
+      "rows": 84,
+      "sku": "21984",
+      "wape": 1.4038461538461537,
+      "winkler": 135.02621775256998
+    },
+    {
+      "actual_units": 26942.0,
+      "coverage": 0.5833333333333334,
+      "mae": 317.23809523809524,
+      "mean_width": 312.239632253273,
+      "median_width": 329.1466015215888,
+      "normalized_bias": -0.024571301313933636,
+      "predicted_units": 26280.0,
+      "rows": 84,
+      "sku": "22197",
+      "wape": 0.9890876698092198,
+      "winkler": 4728.491575188878
+    },
+    {
+      "actual_units": 15653.0,
+      "coverage": 0.75,
+      "mae": 280.0595238095238,
+      "mean_width": 434.21268419615654,
+      "median_width": 450.7221320087837,
+      "normalized_bias": 0.3528397112374625,
+      "predicted_units": 21176.0,
+      "rows": 84,
+      "sku": "84077",
+      "wape": 1.5029067910304734,
+      "winkler": 4059.7530402362186
+    },
+    {
+      "actual_units": 0.0,
+      "coverage": 1.0,
+      "mae": 0.0,
+      "mean_width": 65.74311887555218,
+      "median_width": 67.75863427801929,
+      "normalized_bias": null,
+      "predicted_units": 0.0,
+      "rows": 84,
+      "sku": "84270",
+      "wape": null,
+      "winkler": 65.74311887555218
+    },
+    {
+      "actual_units": 6383.0,
+      "coverage": 0.6547619047619048,
+      "mae": 82.17857142857143,
+      "mean_width": 129.98805332076137,
+      "median_width": 126.56744779638933,
+      "normalized_bias": 0.038696537678207736,
+      "predicted_units": 6630.0,
+      "rows": 84,
+      "sku": "84347",
+      "wape": 1.0814663951120163,
+      "winkler": 1105.1110442034349
+    },
+    {
+      "actual_units": 1308.0,
+      "coverage": 0.8333333333333334,
+      "mae": 29.833333333333332,
+      "mean_width": 170.04775841268724,
+      "median_width": 166.29206542888153,
+      "normalized_bias": 0.14984709480122324,
+      "predicted_units": 1504.0,
+      "rows": 84,
+      "sku": "84568",
+      "wape": 1.915902140672783,
+      "winkler": 350.25133060186465
+    },
+    {
+      "actual_units": 2084.0,
+      "coverage": 0.7857142857142857,
+      "mae": 40.333333333333336,
+      "mean_width": 116.56175465919198,
+      "median_width": 115.99159959726398,
+      "normalized_bias": 0.23224568138195778,
+      "predicted_units": 2568.0,
+      "rows": 84,
+      "sku": "84755",
+      "wape": 1.6257197696737045,
+      "winkler": 543.9509624944781
+    },
+    {
+      "actual_units": 10868.0,
+      "coverage": 0.6309523809523809,
+      "mae": 131.4047619047619,
+      "mean_width": 257.7515669019563,
+      "median_width": 280.0693703879125,
+      "normalized_bias": 0.06588148693411851,
+      "predicted_units": 11584.0,
+      "rows": 84,
+      "sku": "84879",
+      "wape": 1.0156422524843578,
+      "winkler": 1454.3964343795972
+    },
+    {
+      "actual_units": 3760.0,
+      "coverage": 0.7261904761904762,
+      "mae": 78.19047619047619,
+      "mean_width": 175.49878951485746,
+      "median_width": 156.95624254238984,
+      "normalized_bias": 0.375,
+      "predicted_units": 5170.0,
+      "rows": 84,
+      "sku": "84991",
+      "wape": 1.7468085106382978,
+      "winkler": 852.1468003875274
+    },
+    {
+      "actual_units": 2503.0,
+      "coverage": 0.7857142857142857,
+      "mae": 43.94047619047619,
+      "mean_width": 124.19278315895252,
+      "median_width": 120.00869381876808,
+      "normalized_bias": 0.188174190970835,
+      "predicted_units": 2974.0,
+      "rows": 84,
+      "sku": "84992",
+      "wape": 1.4746304434678386,
+      "winkler": 576.6645427512713
+    },
+    {
+      "actual_units": 15243.0,
+      "coverage": 0.6309523809523809,
+      "mae": 168.48809523809524,
+      "mean_width": 284.6895468034732,
+      "median_width": 300.53776761578143,
+      "normalized_bias": -0.19385947648100768,
+      "predicted_units": 12288.0,
+      "rows": 84,
+      "sku": "85099B",
+      "wape": 0.9284917667125894,
+      "winkler": 2040.7911833120781
+    },
+    {
+      "actual_units": 8663.0,
+      "coverage": 0.7857142857142857,
+      "mae": 82.25,
+      "mean_width": 254.99736838269206,
+      "median_width": 266.70273072961777,
+      "normalized_bias": -0.128708299665243,
+      "predicted_units": 7548.0,
+      "rows": 84,
+      "sku": "85123A",
+      "wape": 0.7975297241140482,
+      "winkler": 890.0180021851165
+    }
+  ],
+  "nominal_coverage": 0.9,
+  "overall": {
+    "actual_units": 123744.0,
+    "coverage": 0.7702380952380953,
+    "mae": 85.18809523809524,
+    "mean_width": 192.36921257438343,
+    "median_width": 164.70851533285773,
+    "normalized_bias": 0.059299844840961985,
+    "predicted_units": 131082.0,
+    "rows": 1680,
+    "wape": 1.1565490043961728,
+    "winkler": 1105.4818329024374
+  }
+}

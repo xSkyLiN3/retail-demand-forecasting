@@ -104,6 +104,11 @@ Do not run it speculatively, from automated tests pointed at real processed data
 step. A failed run after claim creation requires manual audit rather than deleting the claim and
 retrying silently.
 
+The canonical portfolio holdout has already been evaluated (`c78eb14bc06ea484`) and must not be
+opened again for tuning. Its reviewed result is in `reports/m2/M2_REPORT.md`. Reproduction on a
+fresh machine is for evidence verification, not authorization to change the frozen method using the
+observed result.
+
 ## Local batch replay
 
 The product batch creates forecasts from observations available at an explicit cutoff and persists
@@ -114,6 +119,8 @@ JSON demo repository:
 ```bash
 retail-forecast run-batch \
   --panel data/processed/daily_demand.csv \
+  --cohort data/processed/cohort.json \
+  --m1-summary reports/m1/evidence/confirmation_summary.json \
   --contract PATH_TO_M2_CONTRACT_JSON \
   --cutoff YYYY-MM-DD \
   --demo-repository local/demo-repository.json
@@ -124,6 +131,8 @@ PostgreSQL:
 ```bash
 retail-forecast run-batch \
   --panel data/processed/daily_demand.csv \
+  --cohort data/processed/cohort.json \
+  --m1-summary reports/m1/evidence/confirmation_summary.json \
   --contract PATH_TO_M2_CONTRACT_JSON \
   --cutoff YYYY-MM-DD \
   --database-url "$DATABASE_URL"
@@ -158,8 +167,8 @@ http://127.0.0.1:8000/
 http://127.0.0.1:8000/docs
 ```
 
-The versioned demo snapshot may be intentionally empty until reviewed evidence is approved for
-publication.
+The versioned snapshot contains the reviewed final historical replay: six forecast runs and 1,680
+forecast/monitoring rows. It is derived public evidence, not a live data feed.
 
 ## Docker Compose
 
@@ -221,7 +230,7 @@ Deleting the named volume destroys persisted demo data and must be a deliberate 
   prevents an automatic retry after outcomes may have been observed.
 - **Run ID collision with different content:** stop and compare the persisted run, calibration and
   input panel; never overwrite it.
-- **Empty dashboard:** verify the selected snapshot or PostgreSQL database contains reviewed runs.
-  The repository's default snapshot can legitimately contain no records.
+- **Empty dashboard:** verify `DEMO_SNAPSHOT_PATH`, file permissions and whether PostgreSQL seeding
+  completed. The reviewed default snapshot should contain six runs.
 - **Storage unavailable:** verify the DSN, container health and database permissions. API `/health`
   returns `503` when repository access fails.

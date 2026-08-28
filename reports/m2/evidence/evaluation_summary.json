@@ -1,0 +1,67 @@
+{
+  "artifact_schema_version": 1,
+  "champion": "seasonal_naive_7d",
+  "contract": {
+    "contract_sha256": "15d47c1e177eff3d2092040f730786c18077217b6f895d5d6077ef863bfe3dcc",
+    "id": "15d47c1e177eff3d"
+  },
+  "decision": {
+    "interval_status": "degraded_with_published_alerts",
+    "operational_use": "rejected",
+    "portfolio_system": "complete",
+    "retuned_after_holdout": false
+  },
+  "evaluation": {
+    "alerts": {
+      "absolute_normalized_bias": 23,
+      "coverage": 29,
+      "overall": 1,
+      "total": 52
+    },
+    "folds": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "holdout_end": "2011-12-09",
+    "holdout_start": "2011-09-17",
+    "id": "c78eb14bc06ea484",
+    "metrics": {
+      "actual_units": 123744.0,
+      "coverage": 0.7702380952380953,
+      "mae": 85.18809523809524,
+      "mean_width": 192.36921257438343,
+      "median_width": 164.70851533285773,
+      "normalized_bias": 0.059299844840961985,
+      "predicted_units": 131082.0,
+      "rows": 1680,
+      "wape": 1.1565490043961728,
+      "winkler": 1105.4818329024374
+    },
+    "run_file_sha256": "db3eb23931a5e0fe4b9f1b2bb425cf779e0b5ba8697510d0f182bd1fcba271f6"
+  },
+  "guardrails": {
+    "maximum_absolute_bias": 0.1,
+    "maximum_coverage": 0.98,
+    "maximum_wape": 2.0,
+    "minimum_coverage": 0.85,
+    "nominal_coverage": 0.9
+  },
+  "hashes": {
+    "calibration": "28a36296dd11c3647b8f48b2b8c6bbe228b73da98a81aff8845ec7009999a830",
+    "cohort_manifest": "50043991459d78fcae8006de381d5220682f5238d05a4a76008d0eb669b75513",
+    "contract_file": "9a7483f671f4b8f428aedb870ad3eeedc472e9370a59a7e9338844dfcf95de8d",
+    "demo_snapshot": "6a1e418049eb2a2c5094be44c6cf722452a2d9c471ba2a230c5c9f0488f4caad",
+    "development_predictions": "90f34e17dd52ef193b3a6a319d6b9321e7d2acade4b9de51d77ef267699268b6",
+    "evaluation": "16d21e0ce68694c62ed3cf75ba71c73e1df4db2688f42befe0bd2a28b0bb3f29",
+    "holdout_predictions": "2a0afda7eee987a61232462d4cd380c7c8636de2c40b611022d481992b120a05",
+    "monitoring": "e32c68b31f2f0ef1e5e15b26a1bf6210dbd7b743a0c1750c95a500ca00d6a97a",
+    "panel": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+    "replay": "e328882b5c7de1a0c6bb327b0d563179e68ad042daddbf4377a5dc545a59590d",
+    "source_tree": "984cb0ed8f3d163f69434785ac77b6b21450947a507c35e3467184267586cfaa"
+  },
+  "summary_role": "Human-readable derivative; canonical manifests and output hashes are authoritative."
+}

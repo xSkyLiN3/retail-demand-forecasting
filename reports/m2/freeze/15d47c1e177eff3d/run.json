@@ -1,0 +1,25 @@
+{
+  "artifact_schema_version": 1,
+  "contract_sha256": "15d47c1e177eff3d2092040f730786c18077217b6f895d5d6077ef863bfe3dcc",
+  "id": "15d47c1e177eff3d",
+  "outputs": {
+    "calibration": {
+      "path": "calibration.json",
+      "sha256": "28a36296dd11c3647b8f48b2b8c6bbe228b73da98a81aff8845ec7009999a830"
+    },
+    "contract": {
+      "path": "contract.json",
+      "sha256": "9a7483f671f4b8f428aedb870ad3eeedc472e9370a59a7e9338844dfcf95de8d"
+    },
+    "development_predictions": {
+      "path": "development_predictions.csv",
+      "sha256": "90f34e17dd52ef193b3a6a319d6b9321e7d2acade4b9de51d77ef267699268b6"
+    },
+    "replay": {
+      "path": "replay.json",
+      "sha256": "e328882b5c7de1a0c6bb327b0d563179e68ad042daddbf4377a5dc545a59590d"
+    }
+  },
+  "phase": "m2_development_freeze",
+  "record_sha256": "fb5b5e089d85a67fd6ba3320327b156862146067fbd4e60945f4fa56785a034d"
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_schema_version": 1,
+  "contract_sha256": "15d47c1e177eff3d2092040f730786c18077217b6f895d5d6077ef863bfe3dcc",
+  "evaluation_id": "c78eb14bc06ea484",
+  "holdout_status": "evaluated_once_no_retuning",
+  "outputs": {
+    "demo_snapshot": {
+      "path": "demo_snapshot.json",
+      "sha256": "6a1e418049eb2a2c5094be44c6cf722452a2d9c471ba2a230c5c9f0488f4caad"
+    },
+    "evaluation": {
+      "path": "evaluation.json",
+      "sha256": "16d21e0ce68694c62ed3cf75ba71c73e1df4db2688f42befe0bd2a28b0bb3f29"
+    },
+    "monitoring": {
+      "path": "monitoring.json",
+      "sha256": "e32c68b31f2f0ef1e5e15b26a1bf6210dbd7b743a0c1750c95a500ca00d6a97a"
+    },
+    "predictions": {
+      "path": "holdout_predictions.csv",
+      "sha256": "2a0afda7eee987a61232462d4cd380c7c8636de2c40b611022d481992b120a05"
+    }
+  },
+  "panel_sha256": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+  "phase": "m2_final_holdout",
+  "record_sha256": "340ce61130ccee8aae36b043ace39e65b4226df85daf239b22c7e8ed0887a5ab",
+  "source_tree_sha256": "984cb0ed8f3d163f69434785ac77b6b21450947a507c35e3467184267586cfaa"
+}

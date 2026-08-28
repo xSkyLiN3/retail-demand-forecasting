@@ -66,3 +66,13 @@ la calibración, los thresholds, las seis fronteras temporales y los hashes de i
 una claim exclusiva. Solo entonces podrá reconstruir el forecast baseline, aplicar intervalos y
 reconciliar outcomes. La ejecución publicará resultados una vez y no autorizará cambios posteriores
 del método.
+
+## Resultado posterior a la apertura
+
+El protocolo anterior se congeló antes de observar el holdout. La apertura canónica se ejecutó una
+sola vez sobre `2011-09-17` a `2011-12-09` y produjo 1.680 filas. La cobertura fue `77,02 %`, por
+debajo del mínimo de `85 %`; WAPE fue `1,1565` y bias normalizado `+0,0593`. El estado final es
+`degraded_with_published_alerts` y el uso operativo queda rechazado.
+
+No se recalibraron intervalos ni thresholds después del resultado. Las métricas, slices, alertas e
+identidades canónicas están en [el informe M2](../reports/m2/M2_REPORT.md) y su evidencia asociada.

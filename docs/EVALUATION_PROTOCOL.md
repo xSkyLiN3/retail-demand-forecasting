@@ -121,6 +121,14 @@ retuning. La confirmación permite decidir si el candidato continúa a M2; no co
 final. El resultado público principal será el del holdout temporal una vez congelados también el
 método de intervalos y la monitorización.
 
+## Cierre M2
+
+Después de congelar el método, el holdout se abrió una sola vez. El champion obtuvo WAPE `1,1565`,
+bias normalizado `+0,0593` y cobertura de intervalos `77,02 %` frente al `90 %` nominal. La
+cobertura incumplió el mínimo predeclarado de `85 %`; el resultado quedó marcado como degradado y el
+modelo no se aprobó para decisiones operativas. El [informe M2](../reports/m2/M2_REPORT.md) conserva
+la lectura completa y los hashes de evidencia.
+
 La confirmación crea una claim exclusiva y un recibo indexado por el hash del panel junto al
 manifiesto de datos. Así, cambiar el directorio de reportes o regenerar una selección equivalente no
 repite silenciosamente los folds `14-19`. Una claim interrumpida se audita manualmente; no se borra
