@@ -1,0 +1,72 @@
+{
+  "artifact_schema_version": 1,
+  "audit": {
+    "folds": 14,
+    "raw_negative_predictions": 0,
+    "training_cutoff_mismatches": 0
+  },
+  "baseline": {
+    "mae": 80.17040816326531,
+    "mase": 0.6859165228790495,
+    "normalized_bias": 0.1294368368549923,
+    "wape": 1.4249931985127415
+  },
+  "candidates": [
+    {
+      "fold_wins_vs_baseline": 11,
+      "mae": 68.61303478701933,
+      "mase": 0.6289781965238391,
+      "name": "poisson_conservative",
+      "normalized_bias": 0.22061156217325362,
+      "relative_wape_improvement": 0.14416009149797068,
+      "wape": 1.2195660486311588
+    },
+    {
+      "fold_wins_vs_baseline": 12,
+      "mae": 73.09804231888627,
+      "mase": 0.6761058546228633,
+      "name": "poisson_medium",
+      "normalized_bias": 0.25649783028388623,
+      "relative_wape_improvement": 0.08821666256178112,
+      "wape": 1.2992850543667098
+    },
+    {
+      "fold_wins_vs_baseline": 7,
+      "mae": 79.68815423433446,
+      "mase": 0.7363488847458041,
+      "name": "squared_error_control",
+      "normalized_bias": 0.4237030534576125,
+      "relative_wape_improvement": 0.006015360779363319,
+      "wape": 1.4164213503155485
+    }
+  ],
+  "inputs": {
+    "cohort_manifest_sha256": "50043991459d78fcae8006de381d5220682f5238d05a4a76008d0eb669b75513",
+    "panel_sha256": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+    "source_tree_sha256": "c9e3e81f21f3d07b971d2120a9f77b9d4a518195277abbe6e6e8869ddb0bee4c"
+  },
+  "integrity": {
+    "canonical_selection_sha256": "4988769d144732e3c8154f310ab989670dc6abe3e423bec3a19e503796119856",
+    "feature_contract_sha256": "5d37045395ddd92b79e19d860e5469d32569b0e0d80adce106630441e1c9121b",
+    "model_grid_sha256": "a47c5e462a8baa059e189d910acdab7373b5cd46442a68dea3b4b5f41f25936b",
+    "search_sha256": "29847c25581c46a30919f46db7197ee29499c2f8516acf2f0072e487e52139c8",
+    "selected_predictions_sha256": "d5117c58ac1e61861887276ccd3650ea6dce3bb0c20f5b15c1c492da74a62022"
+  },
+  "partition": {
+    "confirmation_folds": [14, 15, 16, 17, 18, 19],
+    "confirmation_status_at_selection": "not_run",
+    "final_holdout": {
+      "days": 84,
+      "end": "2011-12-09",
+      "start": "2011-09-17",
+      "status": "reserved_not_evaluated"
+    },
+    "tuning_end": "2011-06-14",
+    "tuning_folds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "tuning_start": "2010-12-01"
+  },
+  "selected_config": "poisson_conservative",
+  "selection_id": "88eb90b8563a7568",
+  "selection_rule": "minimum aggregate WAPE, then absolute bias, then simpler configuration",
+  "tuning_run_id": "c6ae079f497ba1e6"
+}

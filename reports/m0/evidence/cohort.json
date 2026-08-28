@@ -1,0 +1,73 @@
+{
+  "cutoff_exclusive": "2010-12-01",
+  "panel_sha256": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+  "selection": {
+    "max_skus": 20,
+    "min_active_days": 60,
+    "recency_days": 56,
+    "training_days": 365
+  },
+  "skus": [
+    "21212",
+    "85123A",
+    "84077",
+    "85099B",
+    "17003",
+    "84879",
+    "84991",
+    "22197",
+    "21977",
+    "21232",
+    "21213",
+    "21982",
+    "21980",
+    "84568",
+    "84755",
+    "84270",
+    "84347",
+    "21984",
+    "84992",
+    "20725"
+  ],
+  "source": {
+    "archive_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+    "workbook_audit": {
+      "cross_sheet_exact_occurrence_groups": 22523,
+      "cross_sheet_exact_rows_affected": 45046,
+      "cross_sheet_exact_rows_removed": 22523,
+      "cross_sheet_exact_value_groups": 22202,
+      "cross_sheet_multiplicity_mismatch_groups": 0,
+      "cross_sheet_overlap_end": "2010-12-09T20:01:00",
+      "cross_sheet_overlap_start": "2010-12-01T08:26:00",
+      "cross_sheet_policy": "multiset_union_keep_earliest_sheet",
+      "rows_after_cross_sheet_union": 1044848,
+      "rows_before_cross_sheet_union": 1067371,
+      "sheets": [
+        {
+          "end": "2010-12-09T20:01:00",
+          "name": "Year 2009-2010",
+          "rows": 525461,
+          "start": "2009-12-01T07:45:00"
+        },
+        {
+          "end": "2011-12-09T12:50:00",
+          "name": "Year 2010-2011",
+          "rows": 541910,
+          "start": "2010-12-01T08:26:00"
+        }
+      ],
+      "within_sheet_exact_duplicates_beyond_first": 12133
+    },
+    "workbook_bytes": 45622278,
+    "workbook_filename": "online_retail_II.xlsx",
+    "workbook_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+  },
+  "target": {
+    "calendar_policy": "complete_calendar_with_source_observed_day_flag",
+    "cancellation_invoice_prefix": "C",
+    "name": "gross_positive_invoiced_units",
+    "product_code_pattern": "^[0-9]{5}[A-Z]{0,2}$",
+    "quantity_rule": "quantity > 0",
+    "unit_price_rule": "unit_price > 0"
+  }
+}

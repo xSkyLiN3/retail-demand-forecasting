@@ -1,0 +1,750 @@
+{
+  "by_fold": [
+    {
+      "actual_units": 22732.0,
+      "cutoff": "2010-11-30",
+      "fold": 0,
+      "mae": 123.57142857142857,
+      "mase": 0.9873001711696365,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.635491817701918,
+      "predicted_units": 37178.0,
+      "rows": 280,
+      "wape": 1.5220834066514166
+    },
+    {
+      "actual_units": 11313.0,
+      "cutoff": "2010-12-14",
+      "fold": 1,
+      "mae": 68.025,
+      "mase": 0.6046294881960009,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.4084681340051268,
+      "predicted_units": 15934.0,
+      "rows": 280,
+      "wape": 1.6836382922301776
+    },
+    {
+      "actual_units": 11662.0,
+      "cutoff": "2010-12-28",
+      "fold": 2,
+      "mae": 41.65,
+      "mase": 0.3456908762903769,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.941347967758532,
+      "predicted_units": 684.0,
+      "rows": 280,
+      "wape": 1.0
+    },
+    {
+      "actual_units": 11228.0,
+      "cutoff": "2011-01-11",
+      "fold": 3,
+      "mae": 90.27142857142857,
+      "mase": 0.7453304070509911,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 1.0285001781261134,
+      "predicted_units": 22776.0,
+      "rows": 280,
+      "wape": 2.2511578197363735
+    },
+    {
+      "actual_units": 14166.0,
+      "cutoff": "2011-01-25",
+      "fold": 4,
+      "mae": 63.07142857142857,
+      "mase": 0.503264189605646,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.060849922349287024,
+      "predicted_units": 13304.0,
+      "rows": 280,
+      "wape": 1.2466469010306367
+    },
+    {
+      "actual_units": 11822.0,
+      "cutoff": "2011-02-08",
+      "fold": 5,
+      "mae": 70.95714285714286,
+      "mase": 0.5916218795687825,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.25968533243106073,
+      "predicted_units": 14892.0,
+      "rows": 280,
+      "wape": 1.680595499915412
+    },
+    {
+      "actual_units": 13634.0,
+      "cutoff": "2011-02-22",
+      "fold": 6,
+      "mae": 51.27857142857143,
+      "mase": 0.4691839952560129,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.07275927827490099,
+      "predicted_units": 12642.0,
+      "rows": 280,
+      "wape": 1.053102537773214
+    },
+    {
+      "actual_units": 17559.0,
+      "cutoff": "2011-03-08",
+      "fold": 7,
+      "mae": 76.49642857142857,
+      "mase": 0.6448823319337499,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.09231733014408565,
+      "predicted_units": 15938.0,
+      "rows": 280,
+      "wape": 1.2198302864627826
+    },
+    {
+      "actual_units": 20519.0,
+      "cutoff": "2011-03-22",
+      "fold": 8,
+      "mae": 99.18214285714286,
+      "mase": 0.8404219341188915,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.10395243432915834,
+      "predicted_units": 18386.0,
+      "rows": 280,
+      "wape": 1.3534285296554414
+    },
+    {
+      "actual_units": 16929.0,
+      "cutoff": "2011-04-05",
+      "fold": 9,
+      "mae": 97.23214285714286,
+      "mase": 0.8284206039685859,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.3915765845590407,
+      "predicted_units": 23558.0,
+      "rows": 280,
+      "wape": 1.608187134502924
+    },
+    {
+      "actual_units": 15024.0,
+      "cutoff": "2011-04-19",
+      "fold": 10,
+      "mae": 93.28571428571429,
+      "mase": 0.8013356760166541,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.45886581469648563,
+      "predicted_units": 21918.0,
+      "rows": 280,
+      "wape": 1.7385516506922258
+    },
+    {
+      "actual_units": 20501.0,
+      "cutoff": "2011-05-03",
+      "fold": 11,
+      "mae": 69.54642857142858,
+      "mase": 0.6468632788237149,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.5242183308131311,
+      "predicted_units": 9754.0,
+      "rows": 280,
+      "wape": 0.9498561045802644
+    },
+    {
+      "actual_units": 21946.0,
+      "cutoff": "2011-05-17",
+      "fold": 12,
+      "mae": 99.53571428571429,
+      "mase": 0.8879294310406464,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.03162307482001276,
+      "predicted_units": 22640.0,
+      "rows": 280,
+      "wape": 1.2699352957258725
+    },
+    {
+      "actual_units": 11505.0,
+      "cutoff": "2011-05-31",
+      "fold": 13,
+      "mae": 78.28214285714286,
+      "mase": 0.705957057267003,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.6933507170795307,
+      "predicted_units": 19482.0,
+      "rows": 280,
+      "wape": 1.9051716644936985
+    },
+    {
+      "actual_units": 13496.0,
+      "cutoff": "2011-06-14",
+      "fold": 14,
+      "mae": 40.90714285714286,
+      "mase": 0.4166080457889047,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.17071724955542383,
+      "predicted_units": 11192.0,
+      "rows": 280,
+      "wape": 0.8486959098992294
+    },
+    {
+      "actual_units": 14127.0,
+      "cutoff": "2011-06-28",
+      "fold": 15,
+      "mae": 54.65357142857143,
+      "mase": 0.5285966844972264,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.2090323494018546,
+      "predicted_units": 11174.0,
+      "rows": 280,
+      "wape": 1.0832448502866852
+    },
+    {
+      "actual_units": 13847.0,
+      "cutoff": "2011-07-12",
+      "fold": 16,
+      "mae": 73.81071428571428,
+      "mase": 0.7171555319221758,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.24936809417202283,
+      "predicted_units": 17300.0,
+      "rows": 280,
+      "wape": 1.4925254567776414
+    },
+    {
+      "actual_units": 22039.0,
+      "cutoff": "2011-07-26",
+      "fold": 17,
+      "mae": 80.46785714285714,
+      "mase": 0.7952403478366931,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.41476473524207086,
+      "predicted_units": 12898.0,
+      "rows": 280,
+      "wape": 1.0223240618902854
+    },
+    {
+      "actual_units": 17471.0,
+      "cutoff": "2011-08-09",
+      "fold": 18,
+      "mae": 87.85357142857143,
+      "mase": 0.8288748284672143,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.2867036803846374,
+      "predicted_units": 22480.0,
+      "rows": 280,
+      "wape": 1.407990384065022
+    },
+    {
+      "actual_units": 15040.0,
+      "cutoff": "2011-08-23",
+      "fold": 19,
+      "mae": 86.34285714285714,
+      "mase": 0.819444212247374,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.3288563829787234,
+      "predicted_units": 19986.0,
+      "rows": 280,
+      "wape": 1.6074468085106384
+    }
+  ],
+  "by_horizon": [
+    {
+      "actual_units": 33248.0,
+      "horizon": 1,
+      "mae": 109.07,
+      "mase": 0.9294233852606564,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.06087584215591915,
+      "predicted_units": 35272.0,
+      "rows": 400,
+      "wape": 1.3121992300288738
+    },
+    {
+      "actual_units": 31249.0,
+      "horizon": 2,
+      "mae": 125.805,
+      "mase": 1.1248653400542374,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.5156645012640404,
+      "predicted_units": 47363.0,
+      "rows": 400,
+      "wape": 1.6103555313770042
+    },
+    {
+      "actual_units": 19204.0,
+      "horizon": 3,
+      "mae": 72.26,
+      "mase": 0.6349508779843456,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.34180379087690066,
+      "predicted_units": 25768.0,
+      "rows": 400,
+      "wape": 1.5051031035201
+    },
+    {
+      "actual_units": 0.0,
+      "horizon": 4,
+      "mae": 0.0,
+      "mase": 0.0,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": null,
+      "predicted_units": 0.0,
+      "rows": 400,
+      "wape": null
+    },
+    {
+      "actual_units": 15057.0,
+      "horizon": 5,
+      "mae": 49.115,
+      "mase": 0.4553929893883539,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": -0.1771933320050475,
+      "predicted_units": 12389.0,
+      "rows": 400,
+      "wape": 1.304775187620376
+    },
+    {
+      "actual_units": 25580.0,
+      "horizon": 6,
+      "mae": 76.16,
+      "mase": 0.7107802568579608,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": -0.17083659108678656,
+      "predicted_units": 21210.0,
+      "rows": 400,
+      "wape": 1.1909304143862391
+    },
+    {
+      "actual_units": 30078.0,
+      "horizon": 7,
+      "mae": 90.66,
+      "mase": 0.8287342127864619,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": -0.000731431611144358,
+      "predicted_units": 30056.0,
+      "rows": 400,
+      "wape": 1.2056652702972273
+    },
+    {
+      "actual_units": 31828.0,
+      "horizon": 8,
+      "mae": 102.045,
+      "mase": 0.839660740591924,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.10820661053160739,
+      "predicted_units": 35272.0,
+      "rows": 400,
+      "wape": 1.28245569938419
+    },
+    {
+      "actual_units": 44334.0,
+      "horizon": 9,
+      "mae": 164.8425,
+      "mase": 1.5041428067731182,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.06832228086795687,
+      "predicted_units": 47363.0,
+      "rows": 400,
+      "wape": 1.487278386791176
+    },
+    {
+      "actual_units": 26406.0,
+      "horizon": 10,
+      "mae": 93.475,
+      "mase": 0.7726108576762079,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": -0.024161175490418844,
+      "predicted_units": 25768.0,
+      "rows": 400,
+      "wape": 1.4159660683178066
+    },
+    {
+      "actual_units": 0.0,
+      "horizon": 11,
+      "mae": 0.0,
+      "mase": 0.0,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": null,
+      "predicted_units": 0.0,
+      "rows": 400,
+      "wape": null
+    },
+    {
+      "actual_units": 10402.0,
+      "horizon": 12,
+      "mae": 41.3775,
+      "mase": 0.37224290254263404,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.1910209575081715,
+      "predicted_units": 12389.0,
+      "rows": 400,
+      "wape": 1.5911363199384734
+    },
+    {
+      "actual_units": 20679.0,
+      "horizon": 13,
+      "mae": 68.5125,
+      "mase": 0.6182508341252885,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.025678224285507038,
+      "predicted_units": 21210.0,
+      "rows": 400,
+      "wape": 1.3252575076164224
+    },
+    {
+      "actual_units": 28495.0,
+      "horizon": 14,
+      "mae": 89.1725,
+      "mase": 0.805070475705208,
+      "mase_evaluable_rows": 400,
+      "normalized_bias": 0.054781540621161605,
+      "predicted_units": 30056.0,
+      "rows": 400,
+      "wape": 1.2517634672749605
+    }
+  ],
+  "by_sku": [
+    {
+      "actual_units": 17238.0,
+      "mae": 102.08571428571429,
+      "mase": 0.4897161798671788,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.00011602274045712959,
+      "predicted_units": 17236.0,
+      "rows": 280,
+      "sku": "17003",
+      "wape": 1.6581970066132963
+    },
+    {
+      "actual_units": 14410.0,
+      "mae": 51.357142857142854,
+      "mase": 0.9731995232664048,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.0476058292852186,
+      "predicted_units": 13724.0,
+      "rows": 280,
+      "sku": "20725",
+      "wape": 0.9979181124219292
+    },
+    {
+      "actual_units": 28406.0,
+      "mae": 128.3357142857143,
+      "mase": 0.8559839446490753,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.10040132366401465,
+      "predicted_units": 31258.0,
+      "rows": 280,
+      "sku": "21212",
+      "wape": 1.2650144335703724
+    },
+    {
+      "actual_units": 10939.0,
+      "mae": 50.739285714285714,
+      "mase": 0.6154786390505048,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.1267940396745589,
+      "predicted_units": 9552.0,
+      "rows": 280,
+      "sku": "21213",
+      "wape": 1.2987476003290976
+    },
+    {
+      "actual_units": 7834.0,
+      "mae": 35.24285714285714,
+      "mase": 0.5785612625769326,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.11896859841715599,
+      "predicted_units": 8766.0,
+      "rows": 280,
+      "sku": "21232",
+      "wape": 1.2596374776614756
+    },
+    {
+      "actual_units": 19761.0,
+      "mae": 98.68928571428572,
+      "mase": 1.031889294209196,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.09609837558827994,
+      "predicted_units": 17862.0,
+      "rows": 280,
+      "sku": "21977",
+      "wape": 1.3983604068620008
+    },
+    {
+      "actual_units": 4995.0,
+      "mae": 29.49642857142857,
+      "mase": 0.33369811543457545,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.11911911911911911,
+      "predicted_units": 5590.0,
+      "rows": 280,
+      "sku": "21980",
+      "wape": 1.6534534534534535
+    },
+    {
+      "actual_units": 5954.0,
+      "mae": 39.128571428571426,
+      "mase": 0.36749854828113304,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.2398387638562311,
+      "predicted_units": 7382.0,
+      "rows": 280,
+      "sku": "21982",
+      "wape": 1.8401074907625126
+    },
+    {
+      "actual_units": 2709.0,
+      "mae": 19.882142857142856,
+      "mase": 0.23876345910195004,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.29641934293097083,
+      "predicted_units": 3512.0,
+      "rows": 280,
+      "sku": "21984",
+      "wape": 2.05500184569952
+    },
+    {
+      "actual_units": 29065.0,
+      "mae": 157.21785714285716,
+      "mase": 1.3108942536886568,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.189609495957337,
+      "predicted_units": 34576.0,
+      "rows": 280,
+      "sku": "22197",
+      "wape": 1.514570789609496
+    },
+    {
+      "actual_units": 37858.0,
+      "mae": 223.78571428571428,
+      "mase": 1.06624281485648,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.19784457710391462,
+      "predicted_units": 45348.0,
+      "rows": 280,
+      "sku": "84077",
+      "wape": 1.6551323366263406
+    },
+    {
+      "actual_units": 17.0,
+      "mae": 0.175,
+      "mase": 0.0022288235084848263,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 2.5294117647058822,
+      "predicted_units": 60.0,
+      "rows": 280,
+      "sku": "84270",
+      "wape": 2.8823529411764706
+    },
+    {
+      "actual_units": 2755.0,
+      "mae": 10.860714285714286,
+      "mase": 0.1166777778029187,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.20217785843920144,
+      "predicted_units": 3312.0,
+      "rows": 280,
+      "sku": "84347",
+      "wape": 1.1038112522686025
+    },
+    {
+      "actual_units": 12500.0,
+      "mae": 75.13571428571429,
+      "mase": 0.7619611563237942,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.09632,
+      "predicted_units": 11296.0,
+      "rows": 280,
+      "sku": "84568",
+      "wape": 1.68304
+    },
+    {
+      "actual_units": 13673.0,
+      "mae": 48.68928571428572,
+      "mase": 0.7097453617232081,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.07555035471366928,
+      "predicted_units": 12640.0,
+      "rows": 280,
+      "sku": "84755",
+      "wape": 0.9970745264389673
+    },
+    {
+      "actual_units": 24381.0,
+      "mae": 99.05357142857143,
+      "mase": 0.8272422496215134,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.11890406464049876,
+      "predicted_units": 27280.0,
+      "rows": 280,
+      "sku": "84879",
+      "wape": 1.1375661375661377
+    },
+    {
+      "actual_units": 13110.0,
+      "mae": 52.69285714285714,
+      "mase": 0.568356684378878,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": -0.12112890922959572,
+      "predicted_units": 11522.0,
+      "rows": 280,
+      "sku": "84991",
+      "wape": 1.1254004576659038
+    },
+    {
+      "actual_units": 10121.0,
+      "mae": 54.825,
+      "mase": 0.7527333958617003,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.061357573362315974,
+      "predicted_units": 10742.0,
+      "rows": 280,
+      "sku": "84992",
+      "wape": 1.5167473569805354
+    },
+    {
+      "actual_units": 32297.0,
+      "mae": 135.59642857142856,
+      "mase": 1.0549641410352442,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.12059943648016844,
+      "predicted_units": 36192.0,
+      "rows": 280,
+      "sku": "85099B",
+      "wape": 1.1755581013716445
+    },
+    {
+      "actual_units": 28537.0,
+      "mae": 133.43214285714285,
+      "mase": 1.0529153458284521,
+      "mase_evaluable_rows": 280,
+      "normalized_bias": 0.2708413638434313,
+      "predicted_units": 36266.0,
+      "rows": 280,
+      "sku": "85123A",
+      "wape": 1.3092126011844272
+    }
+  ],
+  "overall": {
+    "actual_units": 316560.0,
+    "folds": 20,
+    "mae": 77.32107142857143,
+    "mase": 0.6854375485533141,
+    "mase_evaluable_rows": 5600,
+    "model": "seasonal_naive_7d",
+    "normalized_bias": 0.08704826889057367,
+    "predicted_units": 344116.0,
+    "rows": 5600,
+    "wape": 1.3678228455900936
+  },
+  "run": {
+    "artifact_schema_version": 1,
+    "cohort_cutoff_exclusive": "2010-12-01",
+    "cohort_manifest_sha256": "50043991459d78fcae8006de381d5220682f5238d05a4a76008d0eb669b75513",
+    "cohort_selection": {
+      "max_skus": 20,
+      "min_active_days": 60,
+      "recency_days": 56,
+      "training_days": 365
+    },
+    "cohort_skus": [
+      "21212",
+      "85123A",
+      "84077",
+      "85099B",
+      "17003",
+      "84879",
+      "84991",
+      "22197",
+      "21977",
+      "21232",
+      "21213",
+      "21982",
+      "21980",
+      "84568",
+      "84755",
+      "84270",
+      "84347",
+      "21984",
+      "84992",
+      "20725"
+    ],
+    "configuration": {
+      "final_holdout_days": 84,
+      "horizon_days": 14,
+      "seasonality_days": 7
+    },
+    "development": {
+      "first_cutoff": "2010-11-30",
+      "fold_count": 20,
+      "fold_manifest_sha256": "3b7d5ba3699de9d16a4b65b9f69da77d8b7e05a261969bbba2444a818b4a8db8",
+      "last_test_date": "2011-09-06"
+    },
+    "environment": {
+      "packages": {
+        "numpy": "2.5.2",
+        "openpyxl": "3.1.5",
+        "pandas": "2.3.3",
+        "scikit-learn": "1.9.0"
+      },
+      "project_version": "0.1.0",
+      "python": "3.12.0"
+    },
+    "final_holdout": {
+      "days": 84,
+      "end": "2011-12-09",
+      "start": "2011-09-17",
+      "status": "reserved_not_evaluated"
+    },
+    "id": "634d049d9d45373a",
+    "model": {
+      "name": "seasonal_naive_7d",
+      "type": "development_baseline"
+    },
+    "panel_range": {
+      "end": "2011-12-09",
+      "start": "2009-12-01"
+    },
+    "panel_sha256": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+    "repository": {
+      "commit": null,
+      "dirty": null
+    },
+    "source": {
+      "archive_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+      "workbook_audit": {
+        "cross_sheet_exact_occurrence_groups": 22523,
+        "cross_sheet_exact_rows_affected": 45046,
+        "cross_sheet_exact_rows_removed": 22523,
+        "cross_sheet_exact_value_groups": 22202,
+        "cross_sheet_multiplicity_mismatch_groups": 0,
+        "cross_sheet_overlap_end": "2010-12-09T20:01:00",
+        "cross_sheet_overlap_start": "2010-12-01T08:26:00",
+        "cross_sheet_policy": "multiset_union_keep_earliest_sheet",
+        "rows_after_cross_sheet_union": 1044848,
+        "rows_before_cross_sheet_union": 1067371,
+        "sheets": [
+          {
+            "end": "2010-12-09T20:01:00",
+            "name": "Year 2009-2010",
+            "rows": 525461,
+            "start": "2009-12-01T07:45:00"
+          },
+          {
+            "end": "2011-12-09T12:50:00",
+            "name": "Year 2010-2011",
+            "rows": 541910,
+            "start": "2010-12-01T08:26:00"
+          }
+        ],
+        "within_sheet_exact_duplicates_beyond_first": 12133
+      },
+      "workbook_bytes": 45622278,
+      "workbook_filename": "online_retail_II.xlsx",
+      "workbook_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+    },
+    "source_tree_sha256": "ef130e2107611f3a5e4768b3a3b1f6acc6073e485cbdd4e5ae14a1d6d0286c4c",
+    "target": {
+      "calendar_policy": "complete_calendar_with_source_observed_day_flag",
+      "cancellation_invoice_prefix": "C",
+      "name": "gross_positive_invoiced_units",
+      "product_code_pattern": "^[0-9]{5}[A-Z]{0,2}$",
+      "quantity_rule": "quantity > 0",
+      "unit_price_rule": "unit_price > 0"
+    }
+  }
+}

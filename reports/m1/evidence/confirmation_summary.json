@@ -1,0 +1,152 @@
+{
+  "artifact_schema_version": 1,
+  "audit": {
+    "folds": 6,
+    "raw_negative_predictions": 0,
+    "rows": 1680,
+    "training_cutoff_mismatches": 0
+  },
+  "baseline": {
+    "actual_units": 96020.0,
+    "mae": 70.67261904761905,
+    "mase": 0.6843199417932647,
+    "normalized_bias": -0.010310352009997917,
+    "predicted_units": 95030.0,
+    "wape": 1.2365132264111642
+  },
+  "candidate": {
+    "actual_units": 96020.0,
+    "mae": 62.23348760292788,
+    "mase": 0.6042919270097296,
+    "name": "poisson_conservative",
+    "normalized_bias": 0.1477336429078256,
+    "predicted_units": 110205.38439200941,
+    "wape": 1.088859187387199
+  },
+  "criteria": {
+    "absolute_bias": {
+      "passed": false,
+      "threshold": 0.1,
+      "value": 0.1477336429078256
+    },
+    "bias_deterioration": {
+      "passed": false,
+      "threshold": 0.02,
+      "value": 0.13742329089782768
+    },
+    "fold_wins": {
+      "passed": true,
+      "threshold": 4,
+      "value": 4
+    },
+    "mase_lower": {
+      "passed": true,
+      "threshold": 0.6843199417932647,
+      "value": 0.6042919270097296
+    },
+    "predictions_finite_and_non_negative": {
+      "passed": true,
+      "threshold": true,
+      "value": true
+    },
+    "relative_wape_improvement": {
+      "passed": true,
+      "threshold": 0.05,
+      "value": 0.11941161313131604
+    },
+    "sku_wins": {
+      "passed": false,
+      "threshold": 11,
+      "value": 10
+    }
+  },
+  "decision": {
+    "champion": "seasonal_naive_7d",
+    "promoted": false,
+    "status": "candidate_rejected"
+  },
+  "folds": [
+    {
+      "baseline_wape": 0.8486959098992294,
+      "candidate_wape": 1.0749951188864493,
+      "fold": 14,
+      "relative_wape_improvement": -0.2666434542073965,
+      "win": false
+    },
+    {
+      "baseline_wape": 1.0832448502866852,
+      "candidate_wape": 1.237228342371948,
+      "fold": 15,
+      "relative_wape_improvement": -0.14215021843354286,
+      "win": false
+    },
+    {
+      "baseline_wape": 1.4925254567776414,
+      "candidate_wape": 0.8731550984568355,
+      "fold": 16,
+      "relative_wape_improvement": 0.41498143667045045,
+      "win": true
+    },
+    {
+      "baseline_wape": 1.0223240618902854,
+      "candidate_wape": 0.982918560112627,
+      "fold": 17,
+      "relative_wape_improvement": 0.03854502035763224,
+      "win": true
+    },
+    {
+      "baseline_wape": 1.407990384065022,
+      "candidate_wape": 1.1011354601177654,
+      "fold": 18,
+      "relative_wape_improvement": 0.21793822416693853,
+      "win": true
+    },
+    {
+      "baseline_wape": 1.6074468085106384,
+      "candidate_wape": 1.3015120902504889,
+      "fold": 19,
+      "relative_wape_improvement": 0.19032338528427567,
+      "win": true
+    }
+  ],
+  "horizon_ranges": [
+    {
+      "baseline_wape": 1.267225817813587,
+      "candidate_wape": 1.1018122798911356,
+      "horizons": "1-7",
+      "relative_wape_improvement": 0.13053201378728868
+    },
+    {
+      "baseline_wape": 1.2089378187136814,
+      "candidate_wape": 1.0772292079413393,
+      "horizons": "8-14",
+      "relative_wape_improvement": 0.10894572800483743
+    }
+  ],
+  "integrity": {
+    "baseline_predictions_sha256": "155cbf1f396161bf9a654dc077007a5719fd8936dd8cb5b4012d5593e8a4c43a",
+    "candidate_audit_sha256": "4b429cac3faf4877e1199620946be084599716a34724fd3ccd6d468320c6295f",
+    "candidate_predictions_sha256": "3f353ac1565db48095523dd517d0135adc34f1ba47de6a2376f0beec6757cb78",
+    "canonical_comparison_sha256": "c91cdda216fef1fe0a4c2170fce6bfbdbfd57e0af4be15c977e4d494485e86a1",
+    "canonical_run_sha256": "0a687477e1bae2717e914593068facf37a1601eef88b8dfb83125508bad8fd5a",
+    "receipt_sha256": "c4c436d4741842c51697515a7f0e188b632b837696f9819961a7edb5d2e0734c",
+    "run_record_sha256": "b51846a8b9754ea52f27eee16b1aff297c48323edaf163d7b5babe9f191df843"
+  },
+  "panel_sha256": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+  "selection_id": "88eb90b8563a7568",
+  "selection_sha256": "4988769d144732e3c8154f310ab989670dc6abe3e423bec3a19e503796119856",
+  "sku_evidence": {
+    "evaluable_skus": 19,
+    "losses": 9,
+    "total_skus": 20,
+    "unevaluable_zero_actual_skus": ["84270"],
+    "wins": 10
+  },
+  "validation_id": "de2cb9a17c8762ec",
+  "window": {
+    "end": "2011-09-06",
+    "folds": [14, 15, 16, 17, 18, 19],
+    "final_holdout_status": "reserved_not_evaluated",
+    "start": "2011-06-15"
+  }
+}

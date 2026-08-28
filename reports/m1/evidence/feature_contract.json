@@ -1,0 +1,50 @@
+{
+  "categorical_features": [
+    "sku_index",
+    "horizon",
+    "target_day_of_week",
+    "target_month"
+  ],
+  "feature_columns": [
+    "sku_index",
+    "horizon",
+    "target_day_of_week",
+    "target_month",
+    "target_is_weekend",
+    "target_day_of_year_sin",
+    "target_day_of_year_cos",
+    "baseline_prediction",
+    "target_lag_14",
+    "target_lag_21",
+    "target_lag_28",
+    "target_lag_35",
+    "last_units",
+    "origin_lag_1",
+    "origin_lag_7",
+    "origin_lag_14",
+    "origin_lag_28",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_28",
+    "rolling_mean_56",
+    "rolling_std_28",
+    "rolling_max_28",
+    "active_rate_28",
+    "active_rate_56",
+    "days_since_nonzero",
+    "trend_mean_7_28",
+    "trend_ratio_7_28"
+  ],
+  "history_days": 56,
+  "origin_policy": "daily historical origins",
+  "reference_lags_days": [
+    14,
+    21,
+    28,
+    35
+  ],
+  "row_contract": "one row per origin, SKU and horizon; target_date = origin + horizon",
+  "schema_version": 1,
+  "target_calendar": "known from origin and horizon",
+  "training_label_rule": "target_date <= fold cutoff"
+}

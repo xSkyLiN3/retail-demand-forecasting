@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Confirmation WAPE by fold</title>
+  <desc id="desc">The candidate loses folds 14 and 15, then beats seasonal naive in folds 16 through 19. Lower WAPE is better.</desc>
+  <rect width="1200" height="560" rx="20" fill="#ffffff"/>
+  <text x="72" y="48" fill="#0f172a" font-family="Inter,Segoe UI,sans-serif" font-size="27" font-weight="700">Confirmation WAPE by fold</text>
+  <text x="72" y="76" fill="#475569" font-family="Inter,Segoe UI,sans-serif" font-size="16">Lower is better · candidate wins 4 of 6 folds</text>
+
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="100" y1="390" x2="1120" y2="390"/>
+    <line x1="100" y1="306.7" x2="1120" y2="306.7"/>
+    <line x1="100" y1="223.3" x2="1120" y2="223.3"/>
+    <line x1="100" y1="140" x2="1120" y2="140"/>
+  </g>
+  <g fill="#64748b" font-family="Inter,Segoe UI,sans-serif" font-size="14" text-anchor="end">
+    <text x="88" y="395">0.0</text>
+    <text x="88" y="311.7">0.5</text>
+    <text x="88" y="228.3">1.0</text>
+    <text x="88" y="145">1.5</text>
+  </g>
+  <text x="30" y="250" transform="rotate(-90 30 250)" fill="#475569" font-family="Inter,Segoe UI,sans-serif" font-size="15">WAPE</text>
+
+  <polyline points="160,248.6 340,209.5 520,141.2 700,219.6 880,155.3 1060,122.1" fill="none" stroke="#64748b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="160,210.8 340,183.8 520,244.5 700,226.2 880,206.5 1060,173.1" fill="none" stroke="#0f766e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <g fill="#64748b" stroke="#ffffff" stroke-width="3">
+    <circle cx="160" cy="248.6" r="7"/><circle cx="340" cy="209.5" r="7"/>
+    <circle cx="520" cy="141.2" r="7"/><circle cx="700" cy="219.6" r="7"/>
+    <circle cx="880" cy="155.3" r="7"/><circle cx="1060" cy="122.1" r="7"/>
+  </g>
+  <g fill="#0f766e" stroke="#ffffff" stroke-width="3">
+    <circle cx="160" cy="210.8" r="7"/><circle cx="340" cy="183.8" r="7"/>
+    <circle cx="520" cy="244.5" r="7"/><circle cx="700" cy="226.2" r="7"/>
+    <circle cx="880" cy="206.5" r="7"/><circle cx="1060" cy="173.1" r="7"/>
+  </g>
+
+  <g fill="#334155" font-family="Inter,Segoe UI,sans-serif" font-size="15" text-anchor="middle">
+    <text x="160" y="425">Fold 14</text><text x="340" y="425">Fold 15</text>
+    <text x="520" y="425">Fold 16</text><text x="700" y="425">Fold 17</text>
+    <text x="880" y="425">Fold 18</text><text x="1060" y="425">Fold 19</text>
+  </g>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="13" text-anchor="middle" font-weight="600">
+    <text x="160" y="455" fill="#b91c1c">candidate loses</text>
+    <text x="340" y="455" fill="#b91c1c">candidate loses</text>
+    <text x="520" y="455" fill="#15803d">candidate wins</text>
+    <text x="700" y="455" fill="#15803d">candidate wins</text>
+    <text x="880" y="455" fill="#15803d">candidate wins</text>
+    <text x="1060" y="455" fill="#15803d">candidate wins</text>
+  </g>
+
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="15">
+    <line x1="390" y1="505" x2="430" y2="505" stroke="#64748b" stroke-width="4"/>
+    <circle cx="410" cy="505" r="6" fill="#64748b"/>
+    <text x="442" y="511" fill="#334155">Seasonal naive</text>
+    <line x1="620" y1="505" x2="660" y2="505" stroke="#0f766e" stroke-width="4"/>
+    <circle cx="640" cy="505" r="6" fill="#0f766e"/>
+    <text x="672" y="511" fill="#334155">Poisson conservative</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="558" rx="19" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+</svg>

@@ -1,0 +1,121 @@
+{
+  "artifact_schema_version": 1,
+  "cohort_cutoff_exclusive": "2010-12-01",
+  "cohort_manifest_sha256": "50043991459d78fcae8006de381d5220682f5238d05a4a76008d0eb669b75513",
+  "cohort_selection": {
+    "max_skus": 20,
+    "min_active_days": 60,
+    "recency_days": 56,
+    "training_days": 365
+  },
+  "cohort_skus": [
+    "21212",
+    "85123A",
+    "84077",
+    "85099B",
+    "17003",
+    "84879",
+    "84991",
+    "22197",
+    "21977",
+    "21232",
+    "21213",
+    "21982",
+    "21980",
+    "84568",
+    "84755",
+    "84270",
+    "84347",
+    "21984",
+    "84992",
+    "20725"
+  ],
+  "configuration": {
+    "final_holdout_days": 84,
+    "horizon_days": 14,
+    "seasonality_days": 7
+  },
+  "development": {
+    "first_cutoff": "2010-11-30",
+    "fold_count": 20,
+    "fold_manifest_sha256": "3b7d5ba3699de9d16a4b65b9f69da77d8b7e05a261969bbba2444a818b4a8db8",
+    "last_test_date": "2011-09-06"
+  },
+  "environment": {
+    "packages": {
+      "numpy": "2.5.2",
+      "openpyxl": "3.1.5",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.9.0"
+    },
+    "project_version": "0.1.0",
+    "python": "3.12.0"
+  },
+  "final_holdout": {
+    "days": 84,
+    "end": "2011-12-09",
+    "start": "2011-09-17",
+    "status": "reserved_not_evaluated"
+  },
+  "id": "634d049d9d45373a",
+  "model": {
+    "name": "seasonal_naive_7d",
+    "type": "development_baseline"
+  },
+  "outputs": {
+    "folds_sha256": "3b7d5ba3699de9d16a4b65b9f69da77d8b7e05a261969bbba2444a818b4a8db8",
+    "metrics_sha256": "8fc51064f79018873ea7794d3c687cdf942b0f647f03a7f21aa60576fd143d70",
+    "predictions_sha256": "90f34e17dd52ef193b3a6a319d6b9321e7d2acade4b9de51d77ef267699268b6"
+  },
+  "panel_range": {
+    "end": "2011-12-09",
+    "start": "2009-12-01"
+  },
+  "panel_sha256": "6d39886a45da1da3a25e31c897aacaaa9017a0b88080250c443fc08daa02cf0d",
+  "repository": {
+    "commit": null,
+    "dirty": null
+  },
+  "source": {
+    "archive_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+    "workbook_audit": {
+      "cross_sheet_exact_occurrence_groups": 22523,
+      "cross_sheet_exact_rows_affected": 45046,
+      "cross_sheet_exact_rows_removed": 22523,
+      "cross_sheet_exact_value_groups": 22202,
+      "cross_sheet_multiplicity_mismatch_groups": 0,
+      "cross_sheet_overlap_end": "2010-12-09T20:01:00",
+      "cross_sheet_overlap_start": "2010-12-01T08:26:00",
+      "cross_sheet_policy": "multiset_union_keep_earliest_sheet",
+      "rows_after_cross_sheet_union": 1044848,
+      "rows_before_cross_sheet_union": 1067371,
+      "sheets": [
+        {
+          "end": "2010-12-09T20:01:00",
+          "name": "Year 2009-2010",
+          "rows": 525461,
+          "start": "2009-12-01T07:45:00"
+        },
+        {
+          "end": "2011-12-09T12:50:00",
+          "name": "Year 2010-2011",
+          "rows": 541910,
+          "start": "2010-12-01T08:26:00"
+        }
+      ],
+      "within_sheet_exact_duplicates_beyond_first": 12133
+    },
+    "workbook_bytes": 45622278,
+    "workbook_filename": "online_retail_II.xlsx",
+    "workbook_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+  },
+  "source_tree_sha256": "ef130e2107611f3a5e4768b3a3b1f6acc6073e485cbdd4e5ae14a1d6d0286c4c",
+  "target": {
+    "calendar_policy": "complete_calendar_with_source_observed_day_flag",
+    "cancellation_invoice_prefix": "C",
+    "name": "gross_positive_invoiced_units",
+    "product_code_pattern": "^[0-9]{5}[A-Z]{0,2}$",
+    "quantity_rule": "quantity > 0",
+    "unit_price_rule": "unit_price > 0"
+  }
+}

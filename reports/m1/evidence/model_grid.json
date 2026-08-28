@@ -1,0 +1,94 @@
+{
+  "categorical_features": [
+    "sku_index",
+    "horizon",
+    "target_day_of_week",
+    "target_month"
+  ],
+  "configs": [
+    {
+      "categorical_features": [
+        "sku_index",
+        "horizon",
+        "target_day_of_week",
+        "target_month"
+      ],
+      "early_stopping": false,
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "loss": "poisson",
+      "max_iter": 250,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 80,
+      "name": "poisson_conservative",
+      "random_state": 42
+    },
+    {
+      "categorical_features": [
+        "sku_index",
+        "horizon",
+        "target_day_of_week",
+        "target_month"
+      ],
+      "early_stopping": false,
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "loss": "poisson",
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 40,
+      "name": "poisson_medium",
+      "random_state": 42
+    },
+    {
+      "categorical_features": [
+        "sku_index",
+        "horizon",
+        "target_day_of_week",
+        "target_month"
+      ],
+      "early_stopping": false,
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "loss": "squared_error",
+      "max_iter": 250,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 40,
+      "name": "squared_error_control",
+      "random_state": 42
+    }
+  ],
+  "feature_columns": [
+    "sku_index",
+    "horizon",
+    "target_day_of_week",
+    "target_month",
+    "target_is_weekend",
+    "target_day_of_year_sin",
+    "target_day_of_year_cos",
+    "baseline_prediction",
+    "target_lag_14",
+    "target_lag_21",
+    "target_lag_28",
+    "target_lag_35",
+    "last_units",
+    "origin_lag_1",
+    "origin_lag_7",
+    "origin_lag_14",
+    "origin_lag_28",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_28",
+    "rolling_mean_56",
+    "rolling_std_28",
+    "rolling_max_28",
+    "active_rate_28",
+    "active_rate_56",
+    "days_since_nonzero",
+    "trend_mean_7_28",
+    "trend_ratio_7_28"
+  ],
+  "horizon_days": 14,
+  "schema_version": 1,
+  "strategy": "global_direct_long_format"
+}

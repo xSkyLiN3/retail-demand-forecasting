@@ -1,0 +1,38 @@
+{
+  "archive": {
+    "bytes": 45622418,
+    "filename": "online-retail-ii.zip",
+    "sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+    "url": "https://archive.ics.uci.edu/static/public/502/online%2Bretail%2Bii.zip"
+  },
+  "dataset": {
+    "doi": "https://doi.org/10.24432/C5CG6D",
+    "license": "CC BY 4.0",
+    "name": "Online Retail II"
+  },
+  "verification": {
+    "archive_zip_crc": "passed",
+    "method": "streamed SHA-256, ZIP CRC and workbook inspection",
+    "verified_utc": "2026-08-26T19:13:12Z"
+  },
+  "workbook": {
+    "bytes": 45622278,
+    "filename": "online_retail_II.xlsx",
+    "physical_rows": 1067371,
+    "sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+    "sheets": [
+      {
+        "end": "2010-12-09T20:01:00",
+        "name": "Year 2009-2010",
+        "rows": 525461,
+        "start": "2009-12-01T07:45:00"
+      },
+      {
+        "end": "2011-12-09T12:50:00",
+        "name": "Year 2010-2011",
+        "rows": 541910,
+        "start": "2010-12-01T08:26:00"
+      }
+    ]
+  }
+}
