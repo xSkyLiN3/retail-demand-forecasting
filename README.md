@@ -10,6 +10,8 @@ interactive monitoring dashboard.
 > against a 90% nominal target and an 85% minimum guardrail. That failure is published, not tuned
 > away. The project is a historical educational demonstration of responsible ML evaluation.
 
+![Retail Forecast Lab dashboard](docs/assets/retail-forecast-lab.png)
+
 ## What this project demonstrates
 
 - source and workbook integrity pinned with SHA-256;
