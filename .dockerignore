@@ -1,5 +1,12 @@
 .git
 .github
+.env
+.env.*
+!.env.example
+**/.m1_evaluation
+**/.m2_evaluation
+**/*_claim_*.json
+**/*_receipt_*.json
 .mypy_cache
 .pytest_cache
 .ruff_cache

@@ -1,5 +1,7 @@
 # Retail Demand Forecasting & Monitoring
 
+[![CI](https://github.com/xSkyLiN3/retail-demand-forecasting/actions/workflows/ci.yml/badge.svg)](https://github.com/xSkyLiN3/retail-demand-forecasting/actions/workflows/ci.yml)
+
 An end-to-end ML engineering case study built from real retail transactions: reproducible data
 preparation, chronological backtesting, model-governance gates, calibrated forecast intervals,
 batch inference, outcome reconciliation, PostgreSQL/JSON persistence, a read-only API and an
@@ -124,14 +126,19 @@ reviewed reports and their output hashes remain versioned.
 The reviewed release passed:
 
 - 103 tests on Python 3.12;
-- Ruff lint and format checks over 50 files;
+- Ruff lint and format checks across the codebase;
 - wheel and source-distribution builds in a clean temporary workspace;
 - FastAPI health/dashboard smoke tests;
 - integrity tests for tampered contracts, panels, receipts and output manifests.
 
-CI runs on Windows and Linux. Docker packaging is included; the final audit host did not have a
-Docker daemon, so image construction must still be confirmed on a Docker-enabled machine before
-deployment.
+CI runs on Windows and Linux. A dedicated Ubuntu job builds the Docker image, starts the complete
+PostgreSQL-backed Compose stack, verifies all 1,680 forecast and monitoring records, and restarts
+the API to confirm idempotent demo seeding.
+
+The supported demo distributions for `v1.0.0` are a source clone with an editable install and the
+Docker Compose stack. The wheel and source distribution are build-verified, but the wheel does not
+embed the reviewed `demo/demo_snapshot.json`; an installed API therefore needs an explicit
+`DEMO_SNAPSHOT_PATH` pointing to that external snapshot. No standalone wheel demo is claimed.
 
 ## Data and limitations
 
