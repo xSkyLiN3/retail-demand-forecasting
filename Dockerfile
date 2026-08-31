@@ -41,7 +41,10 @@ ENV PATH="/opt/venv/bin:$PATH" \
 
 WORKDIR /app
 
-RUN python -m pip uninstall --yes pip setuptools \
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get upgrade --yes --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip uninstall --yes pip setuptools \
     && rm -rf /root/.cache/pip \
     && useradd --no-create-home --uid 10001 --shell /usr/sbin/nologin appuser
 
