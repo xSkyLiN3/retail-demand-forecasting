@@ -1,94 +1,94 @@
-# Contrato de datos
+# Data contract
 
-## Fuente
+## Source
 
 - Dataset: **Online Retail II**.
-- Autor: Daqing Chen.
-- Repositorio: UCI Machine Learning Repository.
+- Author: Daqing Chen.
+- Repository: UCI Machine Learning Repository.
 - DOI: <https://doi.org/10.24432/C5CG6D>.
-- Licencia de datos: CC BY 4.0.
-- Período declarado: 1 de diciembre de 2009 a 9 de diciembre de 2011.
-- Archivo esperado dentro del ZIP: `online_retail_II.xlsx`.
+- Data license: CC BY 4.0.
+- Declared period: December 1, 2009 to December 9, 2011.
+- Expected file inside the ZIP: `online_retail_II.xlsx`.
 
-El ZIP y el workbook no se versionan en Git. El descargador comprueba el SHA-256 del archivo y
-`prepare` vuelve a comprobar el SHA-256 del workbook antes de procesarlo.
+The ZIP and workbook are not versioned in Git. The downloader verifies the file's SHA-256, and
+`prepare` verifies the workbook's SHA-256 again before processing it.
 
-## Esquema normalizado
+## Normalized schema
 
-| Campo | Tipo lógico | Uso |
+| Field | Logical type | Use |
 |---|---|---|
-| `invoice_no` | texto no vacío | detectar cancelaciones; no es feature |
-| `stock_code` | texto no vacío | identificador de serie |
-| `description` | texto opcional | auditoría; no es feature |
-| `quantity` | entero | construir demanda y contabilizar devoluciones |
-| `invoice_date` | timestamp | ordenar y agregar por día |
-| `unit_price` | decimal no negativo | filtro de calidad; no es feature del forecast inicial |
-| `customer_id` | texto opcional | descartado; no se usa |
-| `country` | texto no vacío | auditoría; no se usa en el MVP |
+| `invoice_no` | non-empty text | detect cancellations; not a feature |
+| `stock_code` | non-empty text | series identifier |
+| `description` | optional text | audit; not a feature |
+| `quantity` | integer | construct demand and account for returns |
+| `invoice_date` | timestamp | sort and aggregate by day |
+| `unit_price` | non-negative decimal | quality filter; not a feature of the initial forecast |
+| `customer_id` | optional text | discarded; not used |
+| `country` | non-empty text | audit; not used in the MVP |
 
-El loader admite los nombres históricos del workbook (`Invoice`, `Price`, `Customer ID`) y los
-normaliza. Cualquier columna obligatoria ausente detiene el pipeline.
+The loader supports the workbook's historical column names (`Invoice`, `Price`, `Customer ID`) and
+normalizes them. Any missing required column stops the pipeline.
 
-## Definición del objetivo
+## Target definition
 
-`units` es **venta bruta positiva observada**, usada como proxy de demanda. Es la suma diaria de
-`quantity` para filas que cumplen simultáneamente:
+`units` is **observed positive gross sales**, used as a proxy for demand. It is the daily sum of
+`quantity` for rows that simultaneously meet these conditions:
 
-- la factura no comienza con `C` (cancelación);
+- the invoice does not begin with `C` (cancellation);
 - `quantity > 0`;
 - `unit_price > 0`;
-- el código de producto cumple `^[0-9]{5}[A-Z]{0,2}$`.
+- the product code matches `^[0-9]{5}[A-Z]{0,2}$`.
 
-El sufijo de hasta dos letras se fijó después de auditar variantes reales como `15056BL`,
-`79323LP` y `79323GR`. Los códigos no estándar restantes se mantienen fuera del objetivo y se
-publican por volumen para detectar falsos positivos o negativos de esta heurística.
+The suffix of up to two letters was established after auditing real variants such as `15056BL`,
+`79323LP`, and `79323GR`. The remaining non-standard codes are kept outside the target and reported
+by volume to detect false positives or false negatives from this heuristic.
 
-El dataset no permite medir demanda latente, disponibilidad, stockouts ni fulfilment. Las
-devoluciones se contabilizan por separado y no se retrotraen al día de venta, porque hacerlo usaría
-información futura.
+The dataset cannot measure latent demand, availability, stockouts, or fulfilment. Returns are
+accounted for separately and are not backdated to the day of sale, because doing so would use future
+information.
 
-UCI describe la fuente como todas las transacciones del período. Bajo esa premisa, los días sin
-filas elegibles se completan con cero para cada SKU. El panel añade `source_observed_day`: `true` si
-hubo al menos una transacción de cualquier tipo en esa fecha y `false` si el ledger completo no
-contiene filas. Este indicador permite mostrar la incertidumbre entre cero ventas, cierre y posible
-ausencia de cobertura; no se utiliza como feature futura.
+UCI describes the source as all transactions in the period. Under that premise, days with no
+eligible rows are completed with zero for each SKU. The panel adds `source_observed_day`: `true` if
+there was at least one transaction of any type on that date, and `false` if the complete ledger has
+no rows. This indicator makes the uncertainty between zero sales, closure, and possible missing
+coverage visible; it is not used as a future feature.
 
-Las cancelaciones, devoluciones y códigos administrativos se excluyen del objetivo, pero sus
-conteos y unidades se registran en el informe de calidad.
+Cancellations, returns, and administrative codes are excluded from the target, but their counts and
+units are recorded in the quality report.
 
-## Duplicados
+## Duplicates
 
-- Las dos hojas oficiales se solapan entre el 1 y el 9 de diciembre de 2010. Para valores exactos
-  repetidos entre hojas se aplica una unión multiconjunto: se conserva la multiplicidad máxima de
-  una hoja y se prefiere la primera hoja en el orden del workbook. Así no se duplica el período,
-  pero tampoco se colapsan dos líneas idénticas que ya coexistían dentro de una misma hoja.
-- Repeticiones exactas dentro de una hoja se cuentan y se conservan. Sin un identificador de línea
-  no es posible afirmar que sean duplicados erróneos en vez de dos líneas legítimas.
-- El informe publica filas afectadas y retiradas, rango temporal, grupos, multiplicidades y
-  cualquier desigualdad entre hojas antes de congelar el dataset.
+- The two official worksheets overlap between December 1 and 9, 2010. For exact values repeated
+  across worksheets, a multiset union is applied: the maximum multiplicity from one worksheet is
+  retained, and the first worksheet in workbook order is preferred. This avoids duplicating the
+  period without collapsing two identical lines that already coexisted within the same worksheet.
+- Exact repetitions within a worksheet are counted and retained. Without a line identifier, it is
+  not possible to assert that they are erroneous duplicates rather than two legitimate lines.
+- The report publishes affected and removed rows, time range, groups, multiplicities, and any
+  inequality between worksheets before the dataset is frozen.
 
-## Cohorte sin leakage
+## Leakage-free cohort
 
-La cohorte se selecciona dentro de los primeros 365 días observados:
+The cohort is selected within the first 365 observed days:
 
-1. filtrar productos con al menos 60 días activos;
-2. exigir actividad positiva dentro de los 56 días anteriores al cutoff;
-3. ordenar por unidades positivas totales;
-4. conservar hasta 20 productos;
-5. congelar esa lista y el hash del panel antes de crear folds de evaluación.
+1. filter products with at least 60 active days;
+2. require positive activity within the 56 days before the cutoff;
+3. rank by total positive units;
+4. retain up to 20 products;
+5. freeze that list and the panel hash before creating evaluation folds.
 
-No se permite elegir productos usando actividad, ventas o errores del período futuro.
+Products may not be selected using activity, sales, or errors from the future period.
 
-## Invariantes
+## Invariants
 
-- timestamps válidos y ordenables;
-- cantidades finitas e integrales;
-- precios finitos;
-- una fila por `date, sku` después de agregar;
-- panel completo y sin valores faltantes;
+- valid, sortable timestamps;
+- finite, integral quantities;
+- finite prices;
+- one row per `date, sku` after aggregation;
+- complete panel with no missing values;
 - `units >= 0`;
-- días sin transacciones globales identificados, no confundidos silenciosamente con cobertura
-  confirmada;
-- cohorte no vacía y determinada antes del primer cutoff de evaluación;
-- hash y conjunto de SKU del panel iguales a los del manifiesto de cohorte;
-- ninguna fecha de forecast puede ser menor o igual a su cutoff.
+- days with no global transactions identified, rather than silently confused with confirmed
+  coverage;
+- non-empty cohort determined before the first evaluation cutoff;
+- panel hash and SKU set equal to those in the cohort manifest;
+- no forecast date may be earlier than or equal to its cutoff.

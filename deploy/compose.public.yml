@@ -1,0 +1,54 @@
+name: retail-forecasting-public
+
+services:
+  api:
+    image: retail-demand-forecasting-public:${IMAGE_TAG:-1.0.1}
+    pull_policy: never
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-1.0.1}
+        PROJECT_EXTRAS: api
+    environment:
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-retail.nightstrike.cloud,localhost,127.0.0.1}
+      DATABASE_URL: ""
+      DEMO_SNAPSHOT_PATH: /app/demo/demo_snapshot.json
+      DEMO_SNAPSHOT_SHA256: 6a1e418049eb2a2c5094be44c6cf722452a2d9c471ba2a230c5c9f0488f4caad
+      HOST: 0.0.0.0
+      PORT: 8000
+      PUBLIC_DEMO: "1"
+      SEED_DEMO: "0"
+    ports:
+      - "127.0.0.1:${RETAIL_PORT:-8200}:8000"
+    user: "10001:10001"
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    mem_limit: 512m
+    mem_reservation: 192m
+    memswap_limit: 512m
+    cpus: 0.75
+    ulimits:
+      nofile:
+        soft: 1024
+        hard: 1024
+    restart: unless-stopped
+    stop_grace_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+    networks:
+      - runtime
+
+networks:
+  runtime:
+    driver: bridge

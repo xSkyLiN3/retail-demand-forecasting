@@ -14,6 +14,16 @@ interactive monitoring dashboard.
 
 ![Retail Forecast Lab dashboard](docs/assets/retail-forecast-lab.png)
 
+## Public reviewed demo
+
+The hardened release targets <https://retail.nightstrike.cloud>. That endpoint is treated as public
+only after its TLS, smoke and isolation checks pass during the `v1.0.1` rollout.
+
+The public runtime is intentionally read-only and uses the reviewed immutable JSON snapshot rather
+than PostgreSQL. It exposes no source invoices, customer fields, mutable volume or write endpoint.
+The dashboard leads with the final no-go verdict and never presents the failed interval guardrail
+as production readiness.
+
 ## What this project demonstrates
 
 - source and workbook integrity pinned with SHA-256;
@@ -26,7 +36,8 @@ interactive monitoring dashboard.
 - deterministic, idempotent batch forecasts and strict outcome reconciliation;
 - interchangeable atomic JSON and PostgreSQL repositories;
 - FastAPI endpoints and a dependency-free responsive dashboard;
-- Python 3.12 packaging, tests, lint, CI, Dockerfile and localhost-only Compose exposure.
+- Python 3.12 packaging, tests, lint, CI and hardened container delivery;
+- a public, non-root and read-only snapshot demo behind TLS and strict edge controls.
 
 ## Final evidence
 
@@ -125,7 +136,7 @@ reviewed reports and their output hashes remain versioned.
 
 The reviewed release passed:
 
-- 103 tests on Python 3.12;
+- 107 tests on Python 3.12;
 - Ruff lint and format checks across the codebase;
 - wheel and source-distribution builds in a clean temporary workspace;
 - FastAPI health/dashboard smoke tests;
@@ -135,10 +146,16 @@ CI runs on Windows and Linux. A dedicated Ubuntu job builds the Docker image, st
 PostgreSQL-backed Compose stack, verifies all 1,680 forecast and monitoring records, and restarts
 the API to confirm idempotent demo seeding.
 
-The supported demo distributions for `v1.0.0` are a source clone with an editable install and the
+The supported local demo distributions for `v1.0.1` are a source clone with an editable install and the
 Docker Compose stack. The wheel and source distribution are build-verified, but the wheel does not
 embed the reviewed `demo/demo_snapshot.json`; an installed API therefore needs an explicit
 `DEMO_SNAPSHOT_PATH` pointing to that external snapshot. No standalone wheel demo is claimed.
+
+The public deployment manifest is separate from local PostgreSQL Compose. It installs the core
+package plus its API extra while omitting the PostgreSQL extra, verifies the snapshot hash at
+startup, disables API documentation, loads evidence once into an immutable repository and applies
+explicit container resource limits. See
+[Public demo deployment](docs/PUBLIC_DEMO_DEPLOYMENT.md).
 
 ## Data and limitations
 

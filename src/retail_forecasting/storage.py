@@ -306,6 +306,34 @@ class JsonForecastRepository:
         return [dict(row) for row in rows[:limit]]
 
 
+class ImmutableJsonForecastRepository(JsonForecastRepository):
+    """Load one reviewed snapshot in memory and reject every write attempt."""
+
+    def __init__(self, path: str | Path):
+        super().__init__(path)
+        if not self.path.is_file():
+            raise DataContractError(f"Immutable demo snapshot not found: {self.path}")
+        self._snapshot = super()._read()
+
+    def migrate(self) -> None:
+        self._read()
+
+    def _read(self) -> dict[str, Any]:
+        return self._snapshot
+
+    def _write(self, payload: Mapping[str, Any]) -> None:
+        del payload
+        raise DataContractError("Immutable demo repository does not permit writes.")
+
+    def save_run(self, run: Mapping[str, Any], forecasts: Sequence[Mapping[str, Any]]) -> bool:
+        del run, forecasts
+        raise DataContractError("Immutable demo repository does not permit forecast writes.")
+
+    def save_monitoring(self, run_id: str, rows: Sequence[Mapping[str, Any]]) -> bool:
+        del run_id, rows
+        raise DataContractError("Immutable demo repository does not permit monitoring writes.")
+
+
 POSTGRES_SCHEMA = """
 CREATE TABLE IF NOT EXISTS forecast_runs (
   run_id text PRIMARY KEY, cutoff date NOT NULL, model text NOT NULL,

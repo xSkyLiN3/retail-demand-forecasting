@@ -1,88 +1,96 @@
-# Propuesta del proyecto
+# Project Proposal
 
-## Título
+## Title
 
 **Retail Demand Forecasting & Monitoring**
 
-## Objetivo profesional
+## Professional Objective
 
-Construir una segunda evidencia fuerte para un perfil de AI/ML Engineering. El proyecto debe
-complementar, no repetir, Machine Failure Risk Classifier.
+Build a second strong piece of evidence for an AI/ML Engineering profile. The project should
+complement, rather than repeat, Machine Failure Risk Classifier.
 
-La pieza anterior demuestra clasificación tabular, prevención de leakage, evaluación con holdout,
-FastAPI, Docker y CI. Esta debe demostrar temporalidad, datos reales, forecasting multi-horizonte,
-almacenamiento de resultados y monitorización una vez que el valor real se conoce.
+The previous project demonstrates tabular classification, leakage prevention, holdout evaluation,
+FastAPI, Docker, and CI. This project should demonstrate temporality, real data, multi-horizon
+forecasting, result storage, and monitoring once the actual value becomes known.
 
-## Pregunta del producto
+## Product Question
 
-Para un conjunto fijo de productos con historial suficiente, ¿cuántas unidades positivas
-facturadas se observarán cada día durante los próximos 14 días?
+For a fixed set of products with sufficient history, how many units with positive invoiced
+quantities will be observed each day over the next 14 days?
 
-La venta bruta observada se usa como proxy de demanda. No existen datos de inventario, quiebres de
-stock, ventas perdidas ni confirmación de entrega. La salida debe ayudar a inspeccionar patrones y
-errores; no se presentará como recomendación de compra ni como sistema validado para una tienda
-real.
+Observed gross sales are used as a proxy for demand. The dataset contains no inventory, stockout,
+lost-sales, or delivery-confirmation data. The output should support inspection of patterns and
+errors; it will not be presented as a purchasing recommendation or as a system validated for a
+real store.
 
-## Alcance del MVP
+## MVP Scope
 
-- Fuente: UCI Online Retail II, descargada con URL y SHA-256 fijados.
-- Granularidad: SKU por día calendario.
-- Cohorte: productos elegidos usando exclusivamente el primer año de datos.
-- Horizonte: 14 días.
-- Baseline obligatorio: seasonal naive semanal.
-- Modelo aprendido: un modelo global con lags y variables de calendario.
-- Evaluación: rolling origin, al menos seis ventanas.
-- Métricas: WAPE, MASE, bias, MAE y cobertura de intervalos.
-- Salida: forecast, intervalos y errores por producto, horizonte y fecha.
-- Demo local: dashboard que muestre tanto aciertos como fallos.
+- Source: UCI Online Retail II, downloaded using a pinned URL and SHA-256.
+- Granularity: SKU by calendar day.
+- Cohort: products selected using only the first year of data.
+- Horizon: 14 days.
+- Required baseline: weekly seasonal naive.
+- Learned model: a global model with lags and calendar features.
+- Evaluation: rolling origin, with at least six windows.
+- Metrics: WAPE, MASE, bias, MAE, and interval coverage.
+- Output: forecasts, intervals, and errors by product, horizon, and date.
+- Local demo: dashboard showing both successes and failures.
 
-## Fuera del MVP
+## Outside the MVP
 
-- streaming en tiempo real;
-- Kubernetes o una plataforma cloud de pago;
-- autenticación multiusuario;
-- optimización de inventario y costes de stockout;
-- LLM, RAG o explicaciones generativas;
-- predicciones para productos sin historia;
-- afirmaciones de impacto comercial real.
+- real-time streaming;
+- Kubernetes or a paid cloud platform;
+- multi-user authentication;
+- inventory and stockout-cost optimization;
+- LLMs, RAG, or generative explanations;
+- forecasts for products without history;
+- claims of real commercial impact.
 
-## Fases
+## Milestones
 
-### M0 — Contrato y baseline
+### M0 — Contract and Baseline
 
-Descarga verificable, reglas de limpieza, cohorte sin leakage, panel diario, folds temporales y
-seasonal naive. **Estado: completado y verificado localmente.**
+Verifiable download, cleaning rules, leakage-free cohort, daily panel, temporal folds, and seasonal
+naive. **Status: completed and verified locally.**
 
-### M1 — Modelo global
+### M1 — Global Model
 
-Modelo global directo para SKU y horizontes 1-14, con features disponibles al momento del forecast
-y una búsqueda predeclarada de tres configuraciones. Los folds `0-13` seleccionan un único
-candidato; los folds `14-19` lo confirman una vez contra seasonal naive mediante un gate objetivo.
-Si falla, el baseline sigue siendo champion y el rechazo se documenta sin retuning. Los últimos 84
-días permanecen reservados y excluidos de M1 hasta congelar también intervalos y monitorización. La
-reserva es procedimental porque los outcomes permanecen físicamente en el panel local.
+A direct global model for SKUs and horizons 1–14, with features available at forecast time and a
+predeclared search over three configurations. Folds `0-13` select one candidate; folds `14-19`
+confirm it once against seasonal naive using an objective gate. If it fails, the baseline remains
+the champion, and the rejection is documented with no retuning. The final 84 days remain reserved
+and excluded from M1 until intervals and monitoring are also frozen. The reservation is procedural
+because outcomes remain physically present in the local panel.
 
-**Estado: completado y verificado localmente.** Poisson conservador mejoró WAPE de confirmación un
-11.94 %, pero fue rechazado por bias positivo (`0.1477`), deterioro de bias y solo 10/20 SKU
-ganados. Seasonal naive sigue siendo champion y el holdout final no se abrió.
+**Status: completed and verified locally.** Conservative Poisson improved confirmation WAPE by
+11.94%, but it was rejected because of positive bias (`0.1477`), bias deterioration, and wins on
+only 10/20 SKUs. Seasonal naive remains the champion, and the final holdout was not opened during
+M1. The M1 promotion decision is an explicit **no-go**, with **no retuning** after confirmation.
 
-### M2 — Incertidumbre y monitorización
+### M2 — Uncertainty and Monitoring
 
-Intervalos de predicción nominales al 90 %, calibrados únicamente con errores de desarrollo,
-cobertura por horizonte, replay histórico y alertas de calidad/performance. M2 parte del champion
-seasonal naive; no reutiliza la confirmación para rescatar el candidato rechazado.
+Prediction intervals with 90% nominal coverage, calibrated only on development errors, coverage by
+horizon, historical replay, and data-quality and performance alerts. M2 starts from the seasonal
+naive champion; it does not reuse confirmation to rescue the rejected candidate.
 
-### M3 — Producto local
+### M3 — Local Product
 
-Persistencia PostgreSQL, job batch idempotente, API de consulta y dashboard.
+PostgreSQL persistence, idempotent batch job, query API, and dashboard.
 
-### M4 — Publicación
+**Status: completed.** The PostgreSQL implementation is retained as persistence evidence and is
+validated in CI through migration, idempotent seeding, restart, and complete row counts.
 
-Docker Compose, CI, documentación, demo limitada en VPS, caso de estudio y actualización del
-portafolio.
+### M4 — Publication
 
-## Criterio de éxito
+Docker Compose, CI, documentation, limited public demo on the VPS, case study, and portfolio
+update.
 
-El modelo aprendido no gana por una única cifra agregada. Para avanzar debe superar al baseline en
-WAPE en la mayoría de folds y productos elegibles, mantener bias interpretable y publicar los casos
-en que pierde. Los intervalos deben mostrar cobertura observada por horizonte.
+**Status: prepared for release `v1.0.1`.** The public demo uses the reviewed, immutable snapshot,
+without PostgreSQL or write routes, behind TLS and explicit limits. The canonical endpoint is
+`https://retail.nightstrike.cloud` and must be verified after every deployment.
+
+## Success Criterion
+
+The learned model does not win on a single aggregate figure. To advance, it must outperform the
+baseline on WAPE across most folds and eligible products, maintain interpretable bias, and publish
+the cases in which it loses. Intervals must show observed coverage by horizon.
