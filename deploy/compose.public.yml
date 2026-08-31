@@ -51,4 +51,4 @@ services:
 
 networks:
   runtime:
-    internal: true
+    driver: bridge

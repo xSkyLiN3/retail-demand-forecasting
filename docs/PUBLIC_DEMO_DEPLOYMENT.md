@@ -34,7 +34,7 @@ The public Compose manifest enforces:
 - read-only root filesystem and a small, non-executable `/tmp`;
 - all Linux capabilities dropped and `no-new-privileges` enabled;
 - 0.75 CPU, 512 MiB memory, 64 PIDs and bounded log rotation;
-- an internal Docker network and loopback-only host publication;
+- a dedicated Docker bridge network and loopback-only host publication;
 - Swagger/OpenAPI disabled and an explicit trusted-host list;
 - no PostgreSQL dependency or password.
 

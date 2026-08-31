@@ -159,6 +159,8 @@ jobs:
           docker compose -f deploy/compose.public.yml build --pull
           docker compose -f deploy/compose.public.yml \
             up --detach --wait --wait-timeout 180 --no-build
+          test "$(docker compose -f deploy/compose.public.yml port api 8000)" = \
+            "127.0.0.1:18081"
 
       - name: Scan runtime image for actionable vulnerabilities
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
