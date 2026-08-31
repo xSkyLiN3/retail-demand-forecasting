@@ -32,7 +32,7 @@ def dashboard_html() -> str:
       <a href="https://nightstrike.cloud/proyectos/retail-demand-forecasting/">Case study (ES)</a>
       <a href="https://github.com/xSkyLiN3/retail-demand-forecasting">GitHub</a>
       <a
-        href="https://github.com/xSkyLiN3/retail-demand-forecasting/blob/main/MODEL_CARD.md"
+        href="https://github.com/xSkyLiN3/retail-demand-forecasting/blob/v1.0.1/MODEL_CARD.md"
       >Model Card</a>
     </nav>
 

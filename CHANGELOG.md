@@ -4,6 +4,8 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-08-30
+
 ### Added
 
 - Hardened, read-only public demo manifest and VPS release procedure.
@@ -18,6 +20,12 @@ All notable changes to this project are documented in this file.
 - Public health output now hides storage implementation details.
 - Runtime image is multi-stage and installs no PostgreSQL client for the public build.
 
+### Security
+
+- Runtime builds apply current Debian security updates before publishing the final image.
+- CI blocks fixed high or critical vulnerabilities and verifies the loopback-only port binding.
+
 The model, frozen holdout, forecast rows and monitoring outcomes were not changed or reopened.
 
-[Unreleased]: https://github.com/xSkyLiN3/retail-demand-forecasting/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/xSkyLiN3/retail-demand-forecasting/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/xSkyLiN3/retail-demand-forecasting/compare/v1.0.0...v1.0.1
