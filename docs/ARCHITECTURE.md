@@ -92,9 +92,11 @@ remain distinct states.
 
 ### Storage
 
-`storage.py` exposes one repository contract with two implementations:
+`storage.py` exposes one repository contract with three implementations:
 
-- `JsonForecastRepository`: an atomic-file backend for a small local demo or immutable snapshot;
+- `JsonForecastRepository`: an atomic-file backend for a small mutable local demo;
+- `ImmutableJsonForecastRepository`: a startup-loaded, write-rejecting view of the reviewed public
+  snapshot;
 - `PostgresForecastRepository`: relational persistence for runs, forecasts and monitoring rows.
 
 Both validate forecast dates, horizons, non-negative finite bounds, run identity and monitoring
@@ -109,10 +111,12 @@ concurrent production database.
 - `GET /api/forecasts` lists persisted forecasts;
 - `GET /api/monitoring` lists reconciled outcomes and errors;
 - `GET /` renders a compact educational dashboard;
-- `GET /docs` exposes the generated API documentation.
+- `GET /docs` exposes generated API documentation in the local development runtime only.
 
 There are no HTTP mutation routes. Batch and reconciliation are deliberate command-line operations.
-The dashboard labels the data as historical educational replay and does not claim live operations.
+The public runtime disables generated documentation, restricts accepted hosts and loads the reviewed
+snapshot through `ImmutableJsonForecastRepository`. The dashboard labels the data as historical
+educational replay and does not claim live operations.
 
 ## Dependency direction
 

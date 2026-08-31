@@ -4,7 +4,11 @@ from pathlib import Path
 import pytest
 
 from retail_forecasting.dataset import DataContractError
-from retail_forecasting.storage import POSTGRES_SCHEMA, JsonForecastRepository
+from retail_forecasting.storage import (
+    POSTGRES_SCHEMA,
+    ImmutableJsonForecastRepository,
+    JsonForecastRepository,
+)
 
 
 def _fixture():
@@ -50,6 +54,23 @@ def test_json_repository_rejects_run_id_collision(tmp_path):
     rows[0]["prediction"] = 2.5
     with pytest.raises(DataContractError, match="different content"):
         repository.save_run(run, rows)
+
+
+def test_immutable_json_repository_loads_once_and_rejects_writes(tmp_path):
+    source = JsonForecastRepository(tmp_path / "demo.json")
+    source.migrate()
+    run, rows = _fixture()
+    source.save_run(run, rows)
+
+    repository = ImmutableJsonForecastRepository(source.path)
+    assert repository.list_forecasts() == rows
+    source.path.write_text("not-json", encoding="utf-8")
+    assert repository.list_forecasts() == rows
+
+    with pytest.raises(DataContractError, match="does not permit forecast writes"):
+        repository.save_run(run, rows)
+    with pytest.raises(DataContractError, match="does not permit monitoring writes"):
+        repository.save_monitoring("abc", [])
 
 
 def test_json_monitoring_is_strict_and_idempotent(tmp_path):

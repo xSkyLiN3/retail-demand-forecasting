@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+import hashlib
 import json
 
-from retail_forecasting.web import seed_repository
+import pytest
+
+from retail_forecasting.dataset import DataContractError
+from retail_forecasting.web import seed_repository, verify_snapshot_integrity
 
 
 class RecordingRepository:
@@ -43,3 +47,15 @@ def test_seed_repository_preserves_run_boundaries(tmp_path) -> None:
     assert repository.runs[0][1] == [{"run_id": "one", "sku": "A"}]
     assert repository.runs[1][1] == [{"run_id": "two", "sku": "B"}]
     assert repository.monitoring == [("one", [{"run_id": "one", "actual": 1}])]
+
+
+def test_snapshot_integrity_fails_closed(tmp_path) -> None:
+    path = tmp_path / "snapshot.json"
+    path.write_text('{"schema_version":1}', encoding="utf-8")
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+
+    assert verify_snapshot_integrity(path, digest) == digest
+    with pytest.raises(DataContractError, match="does not match"):
+        verify_snapshot_integrity(path, "0" * 64)
+    with pytest.raises(DataContractError, match="must be a 64-character SHA-256"):
+        verify_snapshot_integrity(path, "invalid")
